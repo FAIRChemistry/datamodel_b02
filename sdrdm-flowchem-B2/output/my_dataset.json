@@ -1,0 +1,179 @@
+{
+  "id": "flowchemistryprotocol0",
+  "description": "An HPLC system from Agilent Technologies (Santa Clara, CA) was used for reaction control as well as for analysis.",
+  "title": "Flowscheme first draft",
+  "subject": "flowchem",
+  "authors": [
+    {
+      "id": "author0",
+      "name": "Tallarek, U.",
+      "affiliation": "University of Marburg"
+    },
+    {
+      "id": "author1",
+      "name": "B\u00f6th, J.-A.",
+      "affiliation": "University of Marburg"
+    }
+  ],
+  "reactionmodules": [
+    {
+      "id": "1",
+      "key": "Substrate solutions",
+      "manufacturer": ""
+    },
+    {
+      "id": "4",
+      "key": "Binary Pump for reaction control",
+      "manufacturer": "Agilent",
+      "type_number": "G7120A",
+      "series": "1290 Infinity II Series",
+      "operation_mode": "35 uL"
+    },
+    {
+      "id": "5",
+      "key": "2-position/6-port-valve",
+      "manufacturer": "Agilent",
+      "type_number": "G1170A",
+      "series": "1290 Infinity II Series",
+      "manual_link": "./example_data/manuals_pdf/G1170-Valve-Drive-Heads-en-UseMa-SD-29000412.pdf"
+    },
+    {
+      "id": "9",
+      "key": "Thermostatted HPLC column compartment with the microreactor",
+      "manufacturer": "Agilent",
+      "type_number": "G7116B",
+      "series": "1290 Infinity II Series",
+      "manual_link": "./example_data/manuals_pdf/customer_1290_ii_mct_datasheet_5991-5337en.pdf"
+    },
+    {
+      "id": "10",
+      "key": "Inline DAD",
+      "manufacturer": "Agilent",
+      "type_number": "G7115A",
+      "series": "1290 Infinity II Series",
+      "manual_link": "./example_data/manuals_pdf/InfinityLab_LC_Series_Compendium.pdf"
+    }
+  ],
+  "analysismodules": [
+    {
+      "id": "2",
+      "key": "Autosampler",
+      "manufacturer": "Agilent",
+      "type_number": "G7129B",
+      "series": "1290 Infinity II Series",
+      "manual_link": "./example_data/manuals_pdf/G4226-90001_ALS-A_USR_EN.pdf",
+      "description": "The Autosampler was used for calibrations. A calibration standard was injected with different injection volumes. The resulting peaks were assigned a concentration/amount of substance."
+    },
+    {
+      "id": "3",
+      "key": "Quaternary pump for analytics",
+      "manufacturer": "Agilent",
+      "type_number": "G7104A",
+      "series": "1290 Infinity II Series",
+      "manual_link": "./example_data/manuals_pdf/G4204A_QuatPump_USR_EN.pdf"
+    },
+    {
+      "id": "6",
+      "key": "Eluents",
+      "manufacturer": ""
+    },
+    {
+      "id": "7",
+      "key": "Online DAD",
+      "manufacturer": "Agilent",
+      "type_number": "G7115A",
+      "series": "1290 Infinity II Series",
+      "manual_link": "./example_data/manuals_pdf/InfinityLab_LC_Series_Compendium.pdf"
+    },
+    {
+      "id": "8",
+      "key": "Thermostatted HPLC column compartment with C-8-column",
+      "manufacturer": "Agilent",
+      "type_number": "G7116B",
+      "series": "1290 Infinity II Series",
+      "manual_link": "./example_data/manuals_pdf/customer_1290_ii_mct_datasheet_5991-5337en.pdf"
+    },
+    {
+      "id": "11",
+      "key": "Fraction collector",
+      "manufacturer": "Agilent",
+      "type_number": "G1364E",
+      "series": "1290 Infinity II Series"
+    },
+    {
+      "id": "12",
+      "key": "ESI-MS",
+      "manufacturer": "Agilent",
+      "type_number": "G6150B",
+      "series": "1290 Infinity II Series"
+    }
+  ],
+  "capillaryconnections": [
+    {
+      "id": "capillaryconnection0",
+      "start": "4",
+      "end": "9",
+      "color": "green",
+      "material": "stainless steel",
+      "inner_diameter": 0.17,
+      "length": 800.0,
+      "ID": "01049-87302"
+    },
+    {
+      "id": "capillaryconnection1",
+      "start": "9",
+      "end": "10",
+      "color": "green",
+      "material": "stainless steel",
+      "inner_diameter": 0.17,
+      "length": 230.0,
+      "ID": "5067-1570"
+    },
+    {
+      "id": "capillaryconnection2",
+      "start": "10",
+      "end": "5",
+      "color": "green",
+      "material": "stainless steel",
+      "inner_diameter": 0.17,
+      "length": 800.0,
+      "ID": "01049-87302"
+    },
+    {
+      "id": "capillaryconnection3",
+      "start": "3",
+      "end": "5",
+      "color": "green",
+      "material": "stainless steel",
+      "inner_diameter": 0.17,
+      "length": 800.0,
+      "ID": "01049-87302"
+    },
+    {
+      "id": "capillaryconnection4",
+      "start": "5",
+      "end": "8",
+      "color": "green",
+      "material": "stainless steel",
+      "inner_diameter": 0.17,
+      "length": 230.0,
+      "ID": "5067-1570"
+    },
+    {
+      "id": "capillaryconnection5",
+      "start": "8",
+      "end": "7",
+      "color": "green",
+      "material": "stainless steel",
+      "inner_diameter": 0.17,
+      "length": 320.0,
+      "ID": "5067-1570"
+    }
+  ],
+  "__source__": {
+    "root": "FlowChemistryProtocol",
+    "repo": "https://github.com/C-Kessler/sdrdm-flowchem-B2.git",
+    "commit": "42595252e669c1c65b8893340f5b9d536c7ad62d",
+    "url": "https://github.com/C-Kessler/sdrdm-flowchem-B2/tree/42595252e669c1c65b8893340f5b9d536c7ad62d"
+  }
+}
