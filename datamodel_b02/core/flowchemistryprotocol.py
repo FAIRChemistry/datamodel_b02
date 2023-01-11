@@ -1,14 +1,12 @@
 import sdRDM
 
 from typing import Optional, Union
-from pydantic import PrivateAttr
-from sdRDM.base.listplus import ListPlus
-from sdRDM.base.utils import forge_signature, IDGenerator
-
-from pydantic import Field
 from typing import List
 from typing import Optional
-
+from pydantic import PrivateAttr
+from pydantic import Field
+from sdRDM.base.listplus import ListPlus
+from sdRDM.base.utils import forge_signature, IDGenerator
 from .analysismodule import AnalysisModule
 from .author import Author
 from .capillaryconnection import CapillaryConnection
@@ -18,7 +16,6 @@ from .reactionmodule import ReactionModule
 
 @forge_signature
 class FlowChemistryProtocol(sdRDM.DataModel):
-
     """This is the root of the data model and contains all objects defined in this example. While its good practice to have a single root, you can define as many roots as you like. Furthermore, the name does not have to be ```Root``` and can be any other name.
     """
 
@@ -27,6 +24,7 @@ class FlowChemistryProtocol(sdRDM.DataModel):
         default_factory=IDGenerator("flowchemistryprotocolINDEX"),
         xml="@id",
     )
+
     description: str = Field(
         ...,
         description="Describes the content of the dataset.",
@@ -34,9 +32,7 @@ class FlowChemistryProtocol(sdRDM.DataModel):
     )
 
     title: str = Field(
-        ...,
-        description="Title of the work",
-        dataverse="pyDaRUS.Citation.title",
+        ..., description="Title of the work", dataverse="pyDaRUS.Citation.title"
     )
 
     subject: str = Field(
@@ -46,13 +42,11 @@ class FlowChemistryProtocol(sdRDM.DataModel):
     )
 
     authors: List[Author] = Field(
-        description="Authors of this dataset.",
-        default_factory=ListPlus,
+        description="Authors of this dataset.", default_factory=ListPlus
     )
 
     flowmodules: List[FlowModule] = Field(
-        description="Equipment used in the flowprocess",
-        default_factory=ListPlus,
+        description="Equipment used in the flowprocess", default_factory=ListPlus
     )
 
     reactionmodules: List[ReactionModule] = Field(
@@ -73,8 +67,9 @@ class FlowChemistryProtocol(sdRDM.DataModel):
     __repo__: Optional[str] = PrivateAttr(
         default="git://github.com/FAIRChemistry/datamodel_b02.git"
     )
+
     __commit__: Optional[str] = PrivateAttr(
-        default="b0fc3d71fcf52185c0f38911ddd3994f9f99640b"
+        default="92554fdaa0323000adc7bcdf9b86c5bac31cc15d"
     )
 
     def add_to_authors(
@@ -84,21 +79,21 @@ class FlowChemistryProtocol(sdRDM.DataModel):
         Adds an instance of 'Author' to the attribute 'authors'.
 
         Args:
+
+
             id (str): Unique identifier of the 'Author' object. Defaults to 'None'.
+
+
             name (str): Full name including given and family name.
+
+
             affiliation (Optional[str]): To which organization the author is affiliated to. Defaults to None
         """
 
-        params = {
-            "name": name,
-            "affiliation": affiliation,
-        }
-
+        params = {"name": name, "affiliation": affiliation}
         if id is not None:
             params["id"] = id
-
         authors = [Author(**params)]
-
         self.authors = self.authors + authors
 
     def add_to_flowmodules(
@@ -115,12 +110,26 @@ class FlowChemistryProtocol(sdRDM.DataModel):
         Adds an instance of 'FlowModule' to the attribute 'flowmodules'.
 
         Args:
+
+
             id (str): Unique identifier of the 'FlowModule' object. Defaults to 'None'.
+
+
             key (str): Name of the flow module.
+
+
             manufacturer (Optional[str]): Name of the manufacturer of the device. Defaults to None
+
+
             type_number (Optional[str]): Exact type number given by the manufacturer of the device. Defaults to None
+
+
             series (Optional[str]): The Series of the device. Defaults to None
+
+
             manual_link (Optional[str]): Possibility to get the manual of the device. Defaults to None
+
+
             operation_mode (Optional[str]): Operation mode of the Flow module. Defaults to None
         """
 
@@ -132,12 +141,9 @@ class FlowChemistryProtocol(sdRDM.DataModel):
             "manual_link": manual_link,
             "operation_mode": operation_mode,
         }
-
         if id is not None:
             params["id"] = id
-
         flowmodules = [FlowModule(**params)]
-
         self.flowmodules = self.flowmodules + flowmodules
 
     def add_to_reactionmodules(
@@ -155,13 +161,29 @@ class FlowChemistryProtocol(sdRDM.DataModel):
         Adds an instance of 'ReactionModule' to the attribute 'reactionmodules'.
 
         Args:
+
+
             id (str): Unique identifier of the 'ReactionModule' object. Defaults to 'None'.
+
+
             key (str): Name of the flow module.
+
+
             manufacturer (Optional[str]): Name of the manufacturer of the device. Defaults to None
+
+
             type_number (Optional[str]): Exact type number given by the manufacturer of the device. Defaults to None
+
+
             series (Optional[str]): The Series of the device. Defaults to None
+
+
             manual_link (Optional[str]): Possibility to get the manual of the device. Defaults to None
+
+
             operation_mode (Optional[str]): Operation mode of the Flow module. Defaults to None
+
+
             description (Optional[str]): A description of the purpose of the module. Defaults to None
         """
 
@@ -174,12 +196,9 @@ class FlowChemistryProtocol(sdRDM.DataModel):
             "operation_mode": operation_mode,
             "description": description,
         }
-
         if id is not None:
             params["id"] = id
-
         reactionmodules = [ReactionModule(**params)]
-
         self.reactionmodules = self.reactionmodules + reactionmodules
 
     def add_to_analysismodules(
@@ -197,13 +216,29 @@ class FlowChemistryProtocol(sdRDM.DataModel):
         Adds an instance of 'AnalysisModule' to the attribute 'analysismodules'.
 
         Args:
+
+
             id (str): Unique identifier of the 'AnalysisModule' object. Defaults to 'None'.
+
+
             key (str): Name of the flow module.
+
+
             manufacturer (Optional[str]): Name of the manufacturer of the device. Defaults to None
+
+
             type_number (Optional[str]): Exact type number given by the manufacturer of the device. Defaults to None
+
+
             series (Optional[str]): The Series of the device. Defaults to None
+
+
             manual_link (Optional[str]): Possibility to get the manual of the device. Defaults to None
+
+
             operation_mode (Optional[str]): Operation mode of the Flow module. Defaults to None
+
+
             description (Optional[str]): A description of the purpose of the module. Defaults to None
         """
 
@@ -216,12 +251,9 @@ class FlowChemistryProtocol(sdRDM.DataModel):
             "operation_mode": operation_mode,
             "description": description,
         }
-
         if id is not None:
             params["id"] = id
-
         analysismodules = [AnalysisModule(**params)]
-
         self.analysismodules = self.analysismodules + analysismodules
 
     def add_to_capillaryconnections(
@@ -239,13 +271,29 @@ class FlowChemistryProtocol(sdRDM.DataModel):
         Adds an instance of 'CapillaryConnection' to the attribute 'capillaryconnections'.
 
         Args:
+
+
             id (str): Unique identifier of the 'CapillaryConnection' object. Defaults to 'None'.
+
+
             start (str): A unique ID of a Flowmodule (reaction / analysis) that should be findable in the flow scheme.
+
+
             end (str): A unique ID of a Flowmodule (reaction / analysis) that should be findable in the flow scheme.
+
+
             color (Optional[str]): Color of the Capillary connection. Defaults to None
+
+
             material (Optional[str]): Material of the Capillary connection. Defaults to None
+
+
             inner_diameter (Optional[float]): Inner diameter of the Capillary connection in mm. Defaults to None
+
+
             length (Optional[float]): Length of the Capillary connection in mm. Defaults to None
+
+
             ID (Optional[str]): ID of the Capillary connection. Defaults to None
         """
 
@@ -258,10 +306,7 @@ class FlowChemistryProtocol(sdRDM.DataModel):
             "length": length,
             "ID": ID,
         }
-
         if id is not None:
             params["id"] = id
-
         capillaryconnections = [CapillaryConnection(**params)]
-
         self.capillaryconnections = self.capillaryconnections + capillaryconnections
