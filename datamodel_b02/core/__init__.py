@@ -1,7 +1,7 @@
 from .analysismodule import AnalysisModule
 from .author import Author
 from .capillaryconnection import CapillaryConnection
-from .flowchemistryprotocol import FlowChemistryProtocol
+from .dataset import Dataset
 from .flowmodule import FlowModule
 from .reactionmodule import ReactionModule
 
@@ -11,7 +11,7 @@ __all__ = [
     "AnalysisModule",
     "Author",
     "CapillaryConnection",
-    "FlowChemistryProtocol",
+    "Dataset",
     "FlowModule",
     "ReactionModule",
 ]

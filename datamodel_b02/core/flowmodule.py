@@ -57,5 +57,5 @@ class FlowModule(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="92554fdaa0323000adc7bcdf9b86c5bac31cc15d"
+        default="bf8592932fe757def0bd5c878a13e085d0344240"
     )
