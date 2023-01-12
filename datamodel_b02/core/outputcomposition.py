@@ -28,7 +28,7 @@ class OutputComposition(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="293993f042f1c1fa4930e9edafb7db27e642d4b0"
+        default="1e3c1dd9ffd79c2ed7f59e418212f341e9c2f977"
     )
 
     def add_to_Components(
