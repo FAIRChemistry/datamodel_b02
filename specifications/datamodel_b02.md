@@ -104,7 +104,7 @@ This is another object that represents the author of the dataset. Please note, t
 
 - __thermocouple_type__
   - Type: string
-  - Description: type of the thermocouple (E, J, K, M, N, T, B, R, S, C, D, G or others).
+  - Description: type of the thermocouple like J, K, R, S.
 
 
 ### PressureGauge[_ComponentInformation_]
@@ -124,7 +124,7 @@ This is another object that represents the author of the dataset. Please note, t
 
 - __material__
   - Type: string
-  - Description: material of the Capillary connection (e.g. 1.4404, silicone, etc.)
+  - Description: material of the Capillary connection, e.g. 1.4404, silicone, etc.
 - __inner_diameter__
   - Type: float
   - Description: inner diameter of the Capillary connection in mm
@@ -320,7 +320,7 @@ Stoichiometric information about the compound.
 
 - __pressure_reducing_regulators__
   - Type: PressureReducingRegulator
-  - Description: pressure control device that reduces the primary pressure (e.g. coming form a gas cylinder) to a fixed value. Installed upstream.
+  - Description: pressure control device that reduces the primary pressure, e.g. coming form a gas cylinder, to a fixed value. Installed upstream.
 - __back_pressure_regulators__
   - Type: BackPressureRegulator
   - Description: pressure control device that maintains a defined pressure upstream of its own inlet. Installed downstream.
@@ -330,7 +330,7 @@ Stoichiometric information about the compound.
 
 - __stages__
   - Type: integer
-  - Description: number of stages the pressure reducing valve has (1 or 2). 
+  - Description: number of stages the pressure reducing valve has, usually 1 or 2. 
 - __max_primary_pressure__
   - Type: integer
   - Description: maximum permissible primary pressure with which this device may be operated in mbar.
