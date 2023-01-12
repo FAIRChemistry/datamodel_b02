@@ -1,43 +1,22 @@
-# Data model for CRC 1333 project B07
+# Data model for CRC 1333 project B02
 
-This is the place where you can describe the complete module or dataset and give information about all the details. Markdown offers a convenient way to enable as much space as needed to elucidate purpose and capabilities of your data model.
 
 ### Dataset
 
-This is the root of the data model and contains all objects defined in this example. While its good practice to have a single root, you can define as many roots as you like. Furthermore, the name does not have to be ```Root``` and can be any other name.
-
-- __description*__
-  - Type: string
-  - Description: Describes the content of the dataset.
-  - Dataverse: pyDaRUS.Citation.description.text
 - __title*__
   - Type: string
-  - Description: Title of the work
-  - Dataverse: pyDaRUS.Citation.title
-- __subject*__
+  - Description: title of the work
+- __description*__
   - Type: string
-  - Description: Subject of matter linked to the dataset
-  - Dataverse: pyDaRUS.Citation.subject
+  - Description: describes the content of the dataset.
 - __authors*__
   - Type: Author
   - Multiple: True
-  - Description: Authors of this dataset.
-- __flowmodules*__
-  - Type: FlowModule
-  - Multiple: True
-  - Description: Equipment used in the flowprocess
-- __reactionmodules*__
-  - Type: ReactionModule
-  - Multiple: True
-  - Description: Flow modules in the reaction part of the process
-- __analysismodules*__
-  - Type: AnalysisModule
-  - Multiple: True
-  - Description: Flow modules in the analysis part of the process
-- __capillaryconnections*__
-  - Type: CapillaryConnection
-  - Multiple: True 
-  - Description: A Capillary connection between two flow modules
+  - Description: authors of this dataset.
+- __process_scheme__
+  - Type: ProcessScheme
+  - Description: PandID like setup scheme of the reactor.
+
 
 ### Author
 
@@ -45,100 +24,355 @@ This is another object that represents the author of the dataset. Please note, t
 
 - __name*__
   - Type: string
-  - Description: Full name including given and family name
-  - Dataverse: pyDaRUS.Citation.author.name
+  - Description: full name including given and family name.
 - __affiliation__
   - Type: string
-  - Description: To which organization the author is affiliated to
-  - Dataverse: pyDaRUS.Citation.author.affiliation
+  - Description: to which organization the author is affiliated to.
 
-### CapillaryConnection 
 
-This section should provide all details about the capillary connections of the setup.
+### ProcessScheme
 
-- __start*__
+- __devices__
+  - Type: Device
+  - Description: device of a reactor setup.
+  - Multiple: True
+- __tubings__
+  - Type: Tubing
+  - Description: tubing connection between two devices of a reactor setup.
+  - Multiple: True
+- __operating_media__
+  - Type: OperatingMedia
+  - Description: chemical that is used for the experiment.
+  - Multiple: True
+- __outputs__
+  - Type: Output
+  - Description: output of the experimental setup, propably containing the desired product, propably not.
+
+
+### Component
+
+- __manufacturer__
   - Type: string
-  - Description: A unique ID of a Flowmodule (reaction / analysis) that should be findable in the flow scheme
-  - Dataverse: pyDaRUS.Process.method_parameters.name
-- __end*__
+  - Description: name of the manufacturer of the device.
+- __type_number__
   - Type: string
-  - Description: A unique ID of a Flowmodule (reaction / analysis) that should be findable in the flow scheme
-  - Dataverse: pyDaRUS.Process.method_parameters.value
-- __color__
+  - Description: exact type number given by the manufacturer of the device.
+- __series__
   - Type: string
-  - Description: Color of the Capillary connection
-  - Dataverse: pyDaRUS.Process.method_parameters.value
+  - Description: the Series of the device.
+- __operation_mode__
+  - Type: string
+  - Description: operation mode of the Flow module.
+
+### Device
+
+- __measuring_instruments__
+  - Type: MeasurungInstrument
+  - Description: instrument that measures a physical quantity.
+- __reactors__
+  - Type: Reactor
+  - Description: tubing or vessel in which the reaction takes place.
+- __flow_modules__
+  - Type: FlowModule
+  - Description: component involved in the transport of media.
+
+
+### MeasuringInstrument
+
+- __process_controllers__
+  - Type: ProcessController
+  - Description: devices that measure physical parameters to control and observe the process.
+- __analyzers__
+  - Type: Analyzer
+  - Description: analyzation module to investigate the composition of the reactor output
+
+
+### ProcessController
+
+- __thermocouples__
+  - Type: Thermocouple
+  - Description: thermocouple to measure the temperature at a specific position in the reaction plant.
+  - Multiple: True
+
+- __pressure_gauge__
+  - Type: PressureGauge
+  - Description: pressure gauge to measure the pressure at a specific position in the reaction plant.
+  - Multiple: True
+
+
+### Thermocouple [_Component_]
+
+- __thermocouple_type__
+  - Type: string
+  - Description: type of the Thermocouple (E, J, K, M, N, T, B, R, S, C, D, G or others)
+
+
+### PressureGauge [_Component_]
+
+
+### Analyzer [_Component_]
+
+
+### Reactor
+- __reactor_type__
+  - Type: string
+  - Description: reactor type.
+
+
+### Tubing
+
 - __material__
   - Type: string
-  - Description: Material of the Capillary connection
-  - Dataverse: pyDaRUS.Process.method_parameters.value
+  - Description: material of the Capillary connection (e.g. 1.4404, silicone, etc.)
 - __inner_diameter__
   - Type: float
-  - Description: Inner diameter of the Capillary connection in mm
-  - Dataverse: pyDaRUS.Process.method_parameters.value
+  - Description: inner diameter of the Capillary connection in mm
+- __wall_thickness__
+  - Type: float
+  - Description: wall thickness of the connection in mm
 - __length__
   - Type: float
-  - Description: Length of the Capillary connection in mm
-  - Dataverse: pyDaRUS.Process.method_parameters.value
+  - Description: length of the Capillary connection in mm
+- __insulation__
+  - Type: Insulation
+  - Description: insulation of the connection
+- __heating_mantle__
+  - Type: HeatingMantle
+  - Description: heating mantle of the connection
+- __cooling_mantle__
+  - Type: CoolingMantle
+  - Description: cooling Mantle of the connection
 - __ID__
   - Type: string
   - Description: ID of the Capillary connection
-  - Dataverse: pyDaRUS.Process.method_parameters.value
-  
+- __color__
+  - Type: string
+  - Description: color of the Capillary connection
+
+
+### OperatingMedia
+
+- __educts__
+  - Type: Educt
+  - Description: educt of the reaction investigated.
+- __inert_gas__
+  - Type: InertGas
+  - Description: inert gas with which the reaction apparatus is flushed.
+
+### Educt
+
+- __reagents__
+  - Type: Reagent
+  - Description: Reagent that is used in the reaction under study.
+- __solvents__
+  - Type Solvent
+  - Description: solvent in which the educts are solved.
+
+### Chemical
+
+- __name__
+  - Type: string
+  - Description: IUPAC name of the compound.
+  - Multiple: True
+- __formula__
+  - Type: string
+  - Description: molecular formula of the compound.
+- __pureness__
+  - Type: float
+  - Description: pureness of the compound in percent.
+- __supplier__
+  - Type: string
+  - Description: name of the supplier of the compound.
+- __stoichiometry__
+  - Type: Stoichiometry
+  - Description: stoichiometric information like equivalents, mass, amount of substance, volume
+- __state_of_matter__
+  - Type: string
+  - Description: s for solid, l for liquid and g for gaseous
+
+
+### Stoichiometry
+
+Stoichiometric information about the compound.
+
+- __equivalents__
+  - Type: float
+  - Description: used equivalents in relation to the reference compound
+- __amount_of_substance__
+  - Type: float
+  - Description: amount of substance n in mmol
+- __mass__
+  - Type: float
+  - Description: used mass of the compound in g
+- __volume__
+  - Type: float
+  - Description: volume of the compound
+- __density__
+  - Type: float
+  - Description: density of the compound at standard temperature and pressure.
+- __molar_mass__
+  - Type: float
+  - Description: molar mass of the compound in g per mol
+- __mass_concentration__
+  - Type: float
+  - Description: mass concentration in percent.
+- __molar_concentration__
+  - Type: float
+  - Description: molar concentration in mol per l.
+
+
+### OutputComposition
+
+- __Component__
+  - Type: Chemical
+  - Description: component of the output fluid.
+  - Multiple: True
+
+
 ### FlowModule
 
-This section should provide all details about the equipment of the setup.
-
-- __key*__
-  - Type: string
-  - Description: Name of the flow module
-  - Dataverse: pyDaRUS.Process.method_parameters.name
-- __id*__
-  - Type: string
-  - Description: A unique id that should be findable in the flow scheme
-  - Dataverse: pyDaRUS.Process.method_parameters.value
-- __manufacturer__
-  - Type: string
-  - Description: Name of the manufacturer of the device
-- __type_number__
-  - Type: string
-  - Description: Exact type number given by the manufacturer of the device
-  - Dataverse: pyDaRUS.Process.method_parameters.value
-- __series__
-  - Type: string
-  - Description: The Series of the device
-  - Dataverse: pyDaRUS.Process.method_parameters.value
-- __manual_link__
-  - Type: string
-  - Description: Possibility to get the manual of the device
-  - Dataverse: pyDaRUS.Process.method_parameters.value
-- __manufacturer__
-  - Type: string
-  - Description: Name of the manufacturer of the device
-- __type_number__
-  - Type: string
-  - Description: Exact type number given by the manufacturer of the device
-  - Dataverse: pyDaRUS.Process.method_parameters.value
-- __operation_mode__
-  - Type: string
-  - Description: Operation mode of the Flow module
-  - Dataverse: pyDaRUS.Process.method_parameters.value
-
-### ReactionModule [_FlowModule_]
-
-This section should provide all details about the equipment of the setup.
-
-- __description__
-  - Type: string
-  - Description: A description of the purpose of the module.
-  - Dataverse: pyDaRUS.Process.method_parameters.name
+- __vessels__
+  - Type: Vessel
+  - Description: vessels in which reactants are stored.
+  - Multiple: True
+- __pressure_regulators__
+  - Type: PressureRegulator
+  - Description: devices to control the pressure after or before them.
+  - Multiple: True
+- __valves__
+  - Type: Valve
+  - Description: different types of valves that are part of the plant.
+  - Multiple: True
+- __pumps__
+  - Type: Pump
+  - Description: different types of pumps that are part of the plant.
+  - Multiple: True
+- __mass_flow_controllers__
+  - Type: MassFlowController
+  - Description: electronic flow control device to remotely and precisely adjust the mass flow. 
+  - Multiple: True
+- __nozzles__
+  - Type: Nozzle
+  - Description: Nozzle
+  - Multiple: True
+- __mixers__
+  - Type: Mixer
+  - Description: component that ensures good mixing of fluids.
+  - Multiple: True
 
 
-### AnalysisModule [_FlowModule_]
+### Vessel [_Component_]
 
-This section should provide all details about the equipment of the setup.
-
-- __description__
+- __volume__
+  - Type: float
+  - Description: volume of the vessel in ml.
+- __material__
   - Type: string
-  - Description: A description of the purpose of the module.
-  - Dataverse: pyDaRUS.Process.method_parameters.name
+  - Description: material the vessel is made of.
+
+
+### PressureRegulator
+
+- __pressure_reducing_regulators__
+  - Type: PressureReducingRegulator
+  - Description: pressure control device that reduces the primary pressure (e.g. coming form a gas cylinder) to a fixed value. Installed upstream.
+- __back_pressure_regulators__
+  - Type: BackPressureRegulator
+  - Description: pressure control device that maintains a defined pressure upstream of its own inlet. Installed downstream.
+
+
+### PressureReducingRegulator [_Component_]
+
+- __stages__
+  - Type: integer
+  - Description: number of stages the pressure reducing valve has (1 or 2). 
+- __max_primary_pressure__
+  - Type: integer
+  - Description: maximum permissible primary pressure with which this device may be operated in mbar.
+- __max_secundary_pressure__
+  - Type: integer
+  - Description: maximum possible secondary pressure that can be tapped at this device in mbar.
+
+
+### BackPressureRegulator [_Component_]
+
+- __max_primary_pressure__
+  - Type: integer
+  - Description: maximum possible primary pressure that can be maintained by this device in mbar.
+- __min_primary_pressure__
+  - Type: integer
+  - Description: minimum possible primary pressure that can be maintained by this device in mbar.
+
+
+### Valve
+
+- __ball_valve__
+  - Type: BallValve
+  - Description: flow control device which uses a hollow, (multi)perforated and pivoting ball to control flow through the valvle.
+- __plug_valves__
+  - Type: BallValve
+  - Description: flow control device with cylindrical or conically tapered, (multi)perforated and pivoting plug to control flow through the valve.
+- __needle_valves__
+  - Type: NeedleValve
+  - Description: flow control device with a small port and a threaded, needle-shaped plunger to allows precise regulation of flow, although it is generally only capable of relatively low flow rates.
+- __check_valves__
+  - Type: CheckValve
+  - Description: flow control device that normally allows fluid to flow through it in only one direction.
+- __relief_valves__
+  - Type: ReliefValve
+  - Description: flow control device for safety used to control or limit the pressure in a system and allowing the pressurized fluid to flow from an auxiliary passage out of the system.
+
+
+### BallValve [_Component_]
+
+- __number_of_ports__
+  - Type: integer
+  - Description: number of ports
+
+
+### PlugVavle [_Component_]
+
+- __number_of_ports__
+  - Type: integer
+  - Description: number of ports
+
+
+### NeedleValve [_Component_]
+
+
+### CheckValve [_Component_]
+
+
+### ReliefValve [_Component_]
+
+
+### Pump [_Component_]
+
+- __reciprocating_pumps__
+  - Type: ReciprocatingPump
+  - Description: 
+- __syringe_pumps__
+  - Type: SyringePump
+  - Description:
+
+
+### ReciprocatingPump [_Component_]
+
+
+### SyringePump [_Component_]
+
+
+### MFC [_Component_]
+
+- __minimum_mass_flow__
+  - Type: float
+  - Description: minimum volume flow in SCCM.
+- __maximum_mass_flow__
+  - Type: float
+  - Description: maximum volume flow in SCCM.
+
+
+### Nozzle [_Component_]
+
+
+
