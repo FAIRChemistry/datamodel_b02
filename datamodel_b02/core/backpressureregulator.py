@@ -36,5 +36,5 @@ class BackPressureRegulator(ComponentInformation):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="77e70dd05752c75381f94d10c2488f1e8d2ddd01"
+        default="4c9b99d8f8bfef1da92cd9da2ca6cc7487cee9fe"
     )
