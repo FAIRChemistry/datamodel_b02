@@ -1,11 +1,9 @@
 from typing import Optional, Union
+from typing import Optional
 from pydantic import PrivateAttr
+from pydantic import Field
 from sdRDM.base.listplus import ListPlus
 from sdRDM.base.utils import forge_signature, IDGenerator
-
-from pydantic import Field
-from typing import Optional
-
 from .componentinformation import ComponentInformation
 
 
@@ -16,19 +14,19 @@ class Vessel(ComponentInformation):
         default_factory=IDGenerator("vesselINDEX"),
         xml="@id",
     )
+
     volume: Optional[float] = Field(
-        description="volume of the vessel in ml.",
-        default=None,
+        description="volume of the vessel in ml.", default=None
     )
 
     material: Optional[str] = Field(
-        description="material the vessel is made of.",
-        default=None,
+        description="material the vessel is made of.", default=None
     )
 
     __repo__: Optional[str] = PrivateAttr(
         default="git://github.com/FAIRChemistry/datamodel_b02.git"
     )
+
     __commit__: Optional[str] = PrivateAttr(
-        default="8ad9c293393d92336f63257326745c6bc4db3b6b"
+        default="293993f042f1c1fa4930e9edafb7db27e642d4b0"
     )

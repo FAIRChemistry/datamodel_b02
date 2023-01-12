@@ -1,14 +1,12 @@
 import sdRDM
 
 from typing import Optional, Union
-from pydantic import PrivateAttr
-from sdRDM.base.listplus import ListPlus
-from sdRDM.base.utils import forge_signature, IDGenerator
-
-from pydantic import Field
 from typing import List
 from typing import Optional
-
+from pydantic import PrivateAttr
+from pydantic import Field
+from sdRDM.base.listplus import ListPlus
+from sdRDM.base.utils import forge_signature, IDGenerator
 from .coolingmantle import CoolingMantle
 from .device import Device
 from .educt import Educt
@@ -30,9 +28,9 @@ class ProcessScheme(sdRDM.DataModel):
         default_factory=IDGenerator("processschemeINDEX"),
         xml="@id",
     )
+
     devices: List[Device] = Field(
-        description="device of a reactor setup.",
-        default_factory=ListPlus,
+        description="device of a reactor setup.", default_factory=ListPlus
     )
 
     tubings: List[Tubing] = Field(
@@ -41,8 +39,7 @@ class ProcessScheme(sdRDM.DataModel):
     )
 
     operating_media: List[OperatingMedium] = Field(
-        description="chemical used for the experiment.",
-        default_factory=ListPlus,
+        description="chemical used for the experiment.", default_factory=ListPlus
     )
 
     output: Optional[OutputComposition] = Field(
@@ -56,8 +53,9 @@ class ProcessScheme(sdRDM.DataModel):
     __repo__: Optional[str] = PrivateAttr(
         default="git://github.com/FAIRChemistry/datamodel_b02.git"
     )
+
     __commit__: Optional[str] = PrivateAttr(
-        default="8ad9c293393d92336f63257326745c6bc4db3b6b"
+        default="293993f042f1c1fa4930e9edafb7db27e642d4b0"
     )
 
     def add_to_devices(
@@ -71,9 +69,17 @@ class ProcessScheme(sdRDM.DataModel):
         Adds an instance of 'Device' to the attribute 'devices'.
 
         Args:
+
+
             id (str): Unique identifier of the 'Device' object. Defaults to 'None'.
+
+
             measuring_instruments (Optional[MeasuringInstrument]): instrument that measures a physical quantity. Defaults to None
+
+
             reactors (Optional[Reactor]): tubing or vessel in which the reaction takes place. Defaults to None
+
+
             flow_modules (Optional[FlowModule]): component involved in the transport of media. Defaults to None
         """
 
@@ -82,12 +88,9 @@ class ProcessScheme(sdRDM.DataModel):
             "reactors": reactors,
             "flow_modules": flow_modules,
         }
-
         if id is not None:
             params["id"] = id
-
         devices = [Device(**params)]
-
         self.devices = self.devices + devices
 
     def add_to_tubings(
@@ -107,15 +110,35 @@ class ProcessScheme(sdRDM.DataModel):
         Adds an instance of 'Tubing' to the attribute 'tubings'.
 
         Args:
+
+
             id (str): Unique identifier of the 'Tubing' object. Defaults to 'None'.
+
+
             material (Optional[str]): material of the Capillary connection, e.g. 1.4404, silicone, etc. Defaults to None
+
+
             inner_diameter (Optional[float]): inner diameter of the Capillary connection in mm. Defaults to None
+
+
             wall_thickness (Optional[float]): wall thickness of the connection in mm. Defaults to None
+
+
             length (Optional[float]): length of the Capillary connection in mm. Defaults to None
+
+
             insulation (Optional[Insulation]): insulation of the connection. Defaults to None
+
+
             heating_mantle (Optional[HeatingMantle]): heating mantle of the connection. Defaults to None
+
+
             cooling_mantle (Optional[CoolingMantle]): cooling Mantle of the connection. Defaults to None
+
+
             ID (Optional[str]): ID of the Capillary connection. Defaults to None
+
+
             color (Optional[str]): color of the Capillary connection. Defaults to None
         """
 
@@ -130,12 +153,9 @@ class ProcessScheme(sdRDM.DataModel):
             "ID": ID,
             "color": color,
         }
-
         if id is not None:
             params["id"] = id
-
         tubings = [Tubing(**params)]
-
         self.tubings = self.tubings + tubings
 
     def add_to_operating_media(
@@ -148,19 +168,19 @@ class ProcessScheme(sdRDM.DataModel):
         Adds an instance of 'OperatingMedium' to the attribute 'operating_media'.
 
         Args:
+
+
             id (str): Unique identifier of the 'OperatingMedium' object. Defaults to 'None'.
+
+
             educts (List[Educt]): educt of the reaction investigated.
+
+
             inert_gas (Optional[InertGas]): inert gas with which the reaction apparatus is flushed. Defaults to None
         """
 
-        params = {
-            "educts": educts,
-            "inert_gas": inert_gas,
-        }
-
+        params = {"educts": educts, "inert_gas": inert_gas}
         if id is not None:
             params["id"] = id
-
         operating_media = [OperatingMedium(**params)]
-
         self.operating_media = self.operating_media + operating_media

@@ -19,7 +19,6 @@ classDiagram
     ComponentInformation <-- SyringePump
     ComponentInformation <-- MassFlowController
     ComponentInformation <-- Nozzle
-    ComponentInformation <-- Mixer
     Dataset *-- Author
     Dataset *-- ProcessScheme
     ProcessScheme *-- Device
@@ -48,7 +47,6 @@ classDiagram
     FlowModule *-- Pump
     FlowModule *-- MassFlowController
     FlowModule *-- Nozzle
-    FlowModule *-- Mixer
     PressureRegulator *-- PressureReducingRegulator
     PressureRegulator *-- BackPressureRegulator
     Valve *-- BallValve
@@ -197,7 +195,7 @@ classDiagram
         +Pump[0..*] pumps
         +MassFlowController[0..*] mass_flow_controllers
         +Nozzle[0..*] nozzles
-        +Mixer[0..*] mixers
+        +integer[0..*] mixers
     }
     
     class Vessel {
@@ -268,10 +266,6 @@ classDiagram
     }
     
     class Nozzle {
-        +integer placeholder
-    }
-    
-    class Mixer {
         +integer placeholder
     }
     

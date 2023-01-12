@@ -501,13 +501,5 @@
       }
     },
     "docstring": null
-  },
-  "Mixer": {
-    "attributes": {
-      "placeholder": {
-        "description": "placeholder"
-      }
-    },
-    "docstring": null
   }
 }

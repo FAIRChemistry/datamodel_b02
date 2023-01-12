@@ -1,13 +1,11 @@
 import sdRDM
 
 from typing import Optional, Union
+from typing import Optional
 from pydantic import PrivateAttr
+from pydantic import Field
 from sdRDM.base.listplus import ListPlus
 from sdRDM.base.utils import forge_signature, IDGenerator
-
-from pydantic import Field
-from typing import Optional
-
 from .backpressureregulator import BackPressureRegulator
 from .pressurereducingregulator import PressureReducingRegulator
 
@@ -19,6 +17,7 @@ class PressureRegulator(sdRDM.DataModel):
         default_factory=IDGenerator("pressureregulatorINDEX"),
         xml="@id",
     )
+
     pressure_reducing_regulators: Optional[PressureReducingRegulator] = Field(
         description=(
             "pressure control device that reduces the primary pressure, e.g. coming"
@@ -38,6 +37,7 @@ class PressureRegulator(sdRDM.DataModel):
     __repo__: Optional[str] = PrivateAttr(
         default="git://github.com/FAIRChemistry/datamodel_b02.git"
     )
+
     __commit__: Optional[str] = PrivateAttr(
-        default="8ad9c293393d92336f63257326745c6bc4db3b6b"
+        default="293993f042f1c1fa4930e9edafb7db27e642d4b0"
     )
