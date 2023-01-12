@@ -45,7 +45,7 @@ This is another object that represents the author of the dataset. Please note, t
   - Description: chemical used for the experiment.
   - Multiple: True
 - __output__
-  - Type: Output
+  - Type: OutputComposition
   - Description: output of the experimental setup, propably containing the desired product, propably not.
 
 
@@ -239,6 +239,7 @@ Stoichiometric information about the compound.
 - __educts__
   - Type: Educt
   - Description: educt of the reaction investigated.
+  - Multiple: True
 - __inert_gas__
   - Type: InertGas
   - Description: inert gas with which the reaction apparatus is flushed.
@@ -249,9 +250,11 @@ Stoichiometric information about the compound.
 - __reagents__
   - Type: Reagent
   - Description: Reagent that is used in the reaction under study.
+  - Multiple: True
 - __solvents__
   - Type Solvent
   - Description: solvent in which the educts are solved.
+  - Multiple: True
 
 
 ### Reagent[_Chemical_]
