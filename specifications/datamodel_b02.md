@@ -111,8 +111,16 @@ This is another object that represents the author of the dataset. Please note, t
 
 ### PressureGauge[_ComponentInformation_]
 
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
 
 ### Analyzer[_ComponentInformation_]
+
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
 
 
 ### Reactor
@@ -261,11 +269,23 @@ Stoichiometric information about the compound.
 
 ### Reagent[_Chemical_]
 
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
 
 ### Solvent[_Chemical_]
 
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
 
 ### InertGas[_Chemical_]
+
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
 
 
 ### OutputComposition
@@ -386,11 +406,23 @@ Stoichiometric information about the compound.
 
 ### NeedleValve[_ComponentInformation_]
 
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
 
 ### CheckValve[_ComponentInformation_]
 
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
 
 ### ReliefValve[_ComponentInformation_]
+
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
 
 
 ### Pump[_ComponentInformation_]
@@ -407,8 +439,16 @@ Stoichiometric information about the compound.
 
 ### ReciprocatingPump[_ComponentInformation_]
 
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
 
 ### SyringePump[_ComponentInformation_]
+
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
 
 
 ### MassFlowController[_ComponentInformation_]
@@ -423,8 +463,15 @@ Stoichiometric information about the compound.
 
 ### Nozzle[_ComponentInformation_]
 
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
 
 ### Mixer[_ComponentInformation_]
 
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
 
 
