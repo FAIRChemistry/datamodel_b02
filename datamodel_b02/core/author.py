@@ -19,16 +19,10 @@ class Author(sdRDM.DataModel):
         xml="@id",
     )
 
-    name: str = Field(
-        ...,
-        description="Full name including given and family name",
-        dataverse="pyDaRUS.Citation.author.name",
-    )
+    name: str = Field(..., description="full name including given and family name.")
 
     affiliation: Optional[str] = Field(
-        description="To which organization the author is affiliated to",
-        dataverse="pyDaRUS.Citation.author.affiliation",
-        default=None,
+        description="to which organization the author is affiliated to.", default=None
     )
 
     __repo__: Optional[str] = PrivateAttr(
@@ -36,5 +30,5 @@ class Author(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="bf8592932fe757def0bd5c878a13e085d0344240"
+        default="8ad9c293393d92336f63257326745c6bc4db3b6b"
     )

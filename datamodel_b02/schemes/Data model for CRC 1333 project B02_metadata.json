@@ -1,0 +1,513 @@
+{
+  "docstring": "This is the perliminary data model for CRC 1333 project B02. At the current time, the data model is still under development and major changes can occur at any time. Please feel free to make changes and contribute to the project.",
+  "enums": [],
+  "external": {},
+  "Dataset": {
+    "attributes": {
+      "title": {
+        "description": "title of the work."
+      },
+      "description": {
+        "description": "describes the content of the dataset."
+      },
+      "authors": {
+        "multiple": "True",
+        "description": "authors of this dataset."
+      },
+      "process_scheme": {
+        "description": "PandID like setup scheme of the reactor."
+      }
+    },
+    "docstring": null
+  },
+  "Author": {
+    "attributes": {
+      "name": {
+        "description": "full name including given and family name."
+      },
+      "affiliation": {
+        "description": "to which organization the author is affiliated to."
+      }
+    },
+    "docstring": "This is another object that represents the author of the dataset. Please note, that the options here contain all required fields but also custom ones. In this example, the ```Dataverse``` option specifies where each field should be mapped, when exported to a Dataverse format. Hence, these options allow you to link your dataset towards any other data model without writing code by yourself.\n"
+  },
+  "ProcessScheme": {
+    "attributes": {
+      "devices": {
+        "description": "device of a reactor setup.",
+        "multiple": "True"
+      },
+      "tubings": {
+        "description": "tubing connection between two devices of a reactor setup.",
+        "multiple": "True"
+      },
+      "operating_media": {
+        "description": "chemical used for the experiment.",
+        "multiple": "True"
+      },
+      "output": {
+        "description": "output of the experimental setup, propably containing the desired product, propably not."
+      }
+    },
+    "docstring": null
+  },
+  "ComponentInformation": {
+    "attributes": {
+      "manufacturer": {
+        "description": "name of the manufacturer of the device."
+      },
+      "type_number": {
+        "description": "exact type number given by the manufacturer of the device."
+      },
+      "series": {
+        "description": "the series of the device."
+      },
+      "operational_mode": {
+        "description": "operational mode of the flow module."
+      }
+    },
+    "docstring": null
+  },
+  "Device": {
+    "attributes": {
+      "measuring_instruments": {
+        "description": "instrument that measures a physical quantity."
+      },
+      "reactors": {
+        "description": "tubing or vessel in which the reaction takes place."
+      },
+      "flow_modules": {
+        "description": "component involved in the transport of media."
+      }
+    },
+    "docstring": null
+  },
+  "MeasuringInstrument": {
+    "attributes": {
+      "process_controllers": {
+        "description": "devices that measure physical parameters to control and observe the process."
+      },
+      "analyzers": {
+        "description": "analyzation module to investigate the composition of the reactor output."
+      }
+    },
+    "docstring": null
+  },
+  "ProcessController": {
+    "attributes": {
+      "thermocouples": {
+        "description": "thermocouple to measure the temperature at a specific position in the reaction plant.",
+        "multiple": "True"
+      },
+      "pressure_gauge": {
+        "description": "pressure gauge to measure the pressure at a specific position in the reaction plant.",
+        "multiple": "True"
+      }
+    },
+    "docstring": null
+  },
+  "Thermocouple": {
+    "attributes": {
+      "thermocouple_type": {
+        "description": "type of the thermocouple like J, K, R, S."
+      }
+    },
+    "docstring": null
+  },
+  "PressureGauge": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "Analyzer": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "Reactor": {
+    "attributes": {
+      "reactor_type": {
+        "description": "reactor type."
+      }
+    },
+    "docstring": null
+  },
+  "Tubing": {
+    "attributes": {
+      "material": {
+        "description": "material of the Capillary connection, e.g. 1.4404, silicone, etc."
+      },
+      "inner_diameter": {
+        "description": "inner diameter of the Capillary connection in mm"
+      },
+      "wall_thickness": {
+        "description": "wall thickness of the connection in mm"
+      },
+      "length": {
+        "description": "length of the Capillary connection in mm"
+      },
+      "insulation": {
+        "description": "insulation of the connection"
+      },
+      "heating_mantle": {
+        "description": "heating mantle of the connection"
+      },
+      "cooling_mantle": {
+        "description": "cooling Mantle of the connection"
+      },
+      "ID": {
+        "description": "ID of the Capillary connection"
+      },
+      "color": {
+        "description": "color of the Capillary connection"
+      }
+    },
+    "docstring": null
+  },
+  "Insulation": {
+    "attributes": {
+      "insulation_material": {
+        "description": "material of which the insulation is made of."
+      },
+      "thickness": {
+        "description": "thickness of the insulation in mm."
+      }
+    },
+    "docstring": null
+  },
+  "HeatingMantle": {
+    "attributes": {
+      "length": {
+        "description": "length of the heating mantle in mm."
+      },
+      "power": {
+        "description": "power of the heating mantle in W."
+      }
+    },
+    "docstring": null
+  },
+  "CoolingMantle": {
+    "attributes": {
+      "length": {
+        "description": "length of the cooling mantle in mm."
+      },
+      "power": {
+        "description": "power of the cooling mantle in W."
+      }
+    },
+    "docstring": null
+  },
+  "Chemical": {
+    "attributes": {
+      "name": {
+        "description": "IUPAC name of the compound.",
+        "multiple": "True"
+      },
+      "formula": {
+        "description": "molecular formula of the compound."
+      },
+      "pureness": {
+        "description": "pureness of the compound in percent."
+      },
+      "supplier": {
+        "description": "name of the supplier of the compound."
+      },
+      "stoichiometry": {
+        "description": "stoichiometric information like equivalents, mass, amount of substance, volume"
+      },
+      "state_of_matter": {
+        "description": "s for solid, l for liquid and g for gaseous"
+      }
+    },
+    "docstring": null
+  },
+  "Stoichiometry": {
+    "attributes": {
+      "equivalents": {
+        "description": "used equivalents in relation to the reference compound"
+      },
+      "amount_of_substance": {
+        "description": "amount of substance n in mmol"
+      },
+      "mass": {
+        "description": "used mass of the compound in g"
+      },
+      "volume": {
+        "description": "volume of the compound"
+      },
+      "density": {
+        "description": "density of the compound at standard temperature and pressure."
+      },
+      "molar_mass": {
+        "description": "molar mass of the compound in g per mol"
+      },
+      "mass_concentration": {
+        "description": "mass concentration in percent."
+      },
+      "molar_concentration": {
+        "description": "molar concentration in mol per l."
+      }
+    },
+    "docstring": "Stoichiometric information about the compound.\n"
+  },
+  "OperatingMedium": {
+    "attributes": {
+      "educts": {
+        "description": "educt of the reaction investigated.",
+        "multiple": "True"
+      },
+      "inert_gas": {
+        "description": "inert gas with which the reaction apparatus is flushed."
+      }
+    },
+    "docstring": null
+  },
+  "Educt": {
+    "attributes": {
+      "reagents": {
+        "description": "Reagent that is used in the reaction under study.",
+        "multiple": "True"
+      },
+      "solvents": {
+        "description": "solvent in which the educts are solved.",
+        "multiple": "True"
+      }
+    },
+    "docstring": null
+  },
+  "Reagent": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "Solvent": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "InertGas": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "OutputComposition": {
+    "attributes": {
+      "Components": {
+        "description": "component of the output fluid.",
+        "multiple": "True"
+      }
+    },
+    "docstring": null
+  },
+  "FlowModule": {
+    "attributes": {
+      "vessels": {
+        "description": "vessels in which the reactants are stored.",
+        "multiple": "True"
+      },
+      "pressure_regulators": {
+        "description": "devices to control the pressure after or before them.",
+        "multiple": "True"
+      },
+      "valves": {
+        "description": "different types of valves that are part of the plant.",
+        "multiple": "True"
+      },
+      "pumps": {
+        "description": "different types of pumps that are part of the plant.",
+        "multiple": "True"
+      },
+      "mass_flow_controllers": {
+        "description": "electronic flow control device to remotely and precisely adjust the mass flow.",
+        "multiple": "True"
+      },
+      "nozzles": {
+        "description": "nozzle.",
+        "multiple": "True"
+      },
+      "mixers": {
+        "description": "component that ensures good mixing of fluids.",
+        "multiple": "True"
+      }
+    },
+    "docstring": null
+  },
+  "Vessel": {
+    "attributes": {
+      "volume": {
+        "description": "volume of the vessel in ml."
+      },
+      "material": {
+        "description": "material the vessel is made of."
+      }
+    },
+    "docstring": null
+  },
+  "PressureRegulator": {
+    "attributes": {
+      "pressure_reducing_regulators": {
+        "description": "pressure control device that reduces the primary pressure, e.g. coming form a gas cylinder, to a fixed value. Installed upstream."
+      },
+      "back_pressure_regulators": {
+        "description": "pressure control device that maintains a defined pressure upstream of its own inlet. Installed downstream."
+      }
+    },
+    "docstring": null
+  },
+  "PressureReducingRegulator": {
+    "attributes": {
+      "stages": {
+        "description": "number of stages the pressure reducing valve has, usually 1 or 2."
+      },
+      "max_primary_pressure": {
+        "description": "maximum permissible primary pressure with which this device may be operated in mbar."
+      },
+      "max_secundary_pressure": {
+        "description": "maximum possible secondary pressure that can be tapped at this device in mbar."
+      }
+    },
+    "docstring": null
+  },
+  "BackPressureRegulator": {
+    "attributes": {
+      "max_primary_pressure": {
+        "description": "maximum possible primary pressure that can be maintained by this device in mbar."
+      },
+      "min_primary_pressure": {
+        "description": "minimum possible primary pressure that can be maintained by this device in mbar."
+      }
+    },
+    "docstring": null
+  },
+  "Valve": {
+    "attributes": {
+      "ball_valve": {
+        "description": "flow control device which uses a hollow, single or multi perforated and pivoting ball to control flow through the valvle."
+      },
+      "plug_valves": {
+        "description": "flow control device with cylindrical or conically tapered, single or multi perforated and pivoting plug to control flow through the valve."
+      },
+      "needle_valves": {
+        "description": "flow control device with a small port and a threaded, needle-shaped plunger to allows precise regulation of flow, although it is generally only capable of relatively low flow rates."
+      },
+      "check_valves": {
+        "description": "flow control device that normally allows fluid to flow through it in only one direction."
+      },
+      "relief_valves": {
+        "description": "flow control device for safety used to control or limit the pressure in a system and allowing the pressurized fluid to flow from an auxiliary passage out of the system."
+      }
+    },
+    "docstring": null
+  },
+  "BallValve": {
+    "attributes": {
+      "number_of_ports": {
+        "description": "number of ports."
+      }
+    },
+    "docstring": null
+  },
+  "PlugValve": {
+    "attributes": {
+      "number_of_ports": {
+        "description": "number of ports."
+      }
+    },
+    "docstring": null
+  },
+  "NeedleValve": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "CheckValve": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "ReliefValve": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "Pump": {
+    "attributes": {
+      "reciprocating_pumps": {
+        "description": "reciprocating pump.",
+        "multiple": "True"
+      },
+      "syringe_pumps": {
+        "description": "syringe pump.",
+        "multiple": "True"
+      }
+    },
+    "docstring": null
+  },
+  "ReciprocatingPump": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "SyringePump": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "MassFlowController": {
+    "attributes": {
+      "minimum_mass_flow": {
+        "description": "minimum volume flow in SCCM."
+      },
+      "maximum_mass_flow": {
+        "description": "maximum volume flow in SCCM."
+      }
+    },
+    "docstring": null
+  },
+  "Nozzle": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "Mixer": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  }
+}
