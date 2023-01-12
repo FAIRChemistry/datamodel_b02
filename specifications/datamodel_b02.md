@@ -100,20 +100,21 @@ This is another object that represents the author of the dataset. Please note, t
   - Multiple: True
 
 
-### Thermocouple [_ComponentInformation_]
+### Thermocouple[_ComponentInformation_]
 
 - __thermocouple_type__
   - Type: string
   - Description: type of the thermocouple (E, J, K, M, N, T, B, R, S, C, D, G or others).
 
 
-### PressureGauge [_ComponentInformation_]
+### PressureGauge[_ComponentInformation_]
 
 
-### Analyzer [_ComponentInformation_]
+### Analyzer[_ComponentInformation_]
 
 
 ### Reactor
+
 - __reactor_type__
   - Type: string
   - Description: reactor type.
@@ -171,6 +172,7 @@ This is another object that represents the author of the dataset. Please note, t
 
 
 ### CoolingMantle
+
 - __length__
   - Type: float
   - Description: length of the cooling mantle in mm.
@@ -178,24 +180,6 @@ This is another object that represents the author of the dataset. Please note, t
   - Type: float
   - Description: power of the cooling mantle in W.
 
-
-### OperatingMedia
-
-- __educts__
-  - Type: Educt
-  - Description: educt of the reaction investigated.
-- __inert_gas__
-  - Type: InertGas
-  - Description: inert gas with which the reaction apparatus is flushed.
-
-### Educt
-
-- __reagents__
-  - Type: Reagent
-  - Description: Reagent that is used in the reaction under study.
-- __solvents__
-  - Type Solvent
-  - Description: solvent in which the educts are solved.
 
 ### Chemical
 
@@ -250,6 +234,35 @@ Stoichiometric information about the compound.
   - Description: molar concentration in mol per l.
 
 
+### OperatingMedium
+
+- __educts__
+  - Type: Educt
+  - Description: educt of the reaction investigated.
+- __inert_gas__
+  - Type: InertGas
+  - Description: inert gas with which the reaction apparatus is flushed.
+
+
+### Educt
+
+- __reagents__
+  - Type: Reagent
+  - Description: Reagent that is used in the reaction under study.
+- __solvents__
+  - Type Solvent
+  - Description: solvent in which the educts are solved.
+
+
+### Reagent[_Chemical_]
+
+
+### Solvent[_Chemical_]
+
+
+### InertGas[_Chemical_]
+
+
 ### OutputComposition
 
 - __Component__
@@ -290,7 +303,7 @@ Stoichiometric information about the compound.
   - Multiple: True
 
 
-### Vessel [_ComponentInformation_]
+### Vessel[_ComponentInformation_]
 
 - __volume__
   - Type: float
@@ -310,7 +323,7 @@ Stoichiometric information about the compound.
   - Description: pressure control device that maintains a defined pressure upstream of its own inlet. Installed downstream.
 
 
-### PressureReducingRegulator [_ComponentInformation_]
+### PressureReducingRegulator[_ComponentInformation_]
 
 - __stages__
   - Type: integer
@@ -323,7 +336,7 @@ Stoichiometric information about the compound.
   - Description: maximum possible secondary pressure that can be tapped at this device in mbar.
 
 
-### BackPressureRegulator [_ComponentInformation_]
+### BackPressureRegulator[_ComponentInformation_]
 
 - __max_primary_pressure__
   - Type: integer
@@ -352,46 +365,48 @@ Stoichiometric information about the compound.
   - Description: flow control device for safety used to control or limit the pressure in a system and allowing the pressurized fluid to flow from an auxiliary passage out of the system.
 
 
-### BallValve [_ComponentInformation_]
+### BallValve[_ComponentInformation_]
 
 - __number_of_ports__
   - Type: integer
   - Description: number of ports
 
 
-### PlugVavle [_ComponentInformation_]
+### PlugVavle[_ComponentInformation_]
 
 - __number_of_ports__
   - Type: integer
   - Description: number of ports
 
 
-### NeedleValve [_ComponentInformation_]
+### NeedleValve[_ComponentInformation_]
 
 
-### CheckValve [_ComponentInformation_]
+### CheckValve[_ComponentInformation_]
 
 
-### ReliefValve [_ComponentInformation_]
+### ReliefValve[_ComponentInformation_]
 
 
-### Pump [_ComponentInformation_]
+### Pump[_ComponentInformation_]
 
 - __reciprocating_pumps__
   - Type: ReciprocatingPump
   - Description: reciprocating pump.
+  - Multiple: True
 - __syringe_pumps__
   - Type: SyringePump
   - Description: syringe pump.
+  - Multiple: True
 
 
-### ReciprocatingPump [_ComponentInformation_]
+### ReciprocatingPump[_ComponentInformation_]
 
 
-### SyringePump [_ComponentInformation_]
+### SyringePump[_ComponentInformation_]
 
 
-### MFC [_ComponentInformation_]
+### MFC[_ComponentInformation_]
 
 - __minimum_mass_flow__
   - Type: float
@@ -401,9 +416,10 @@ Stoichiometric information about the compound.
   - Description: maximum volume flow in SCCM.
 
 
-### Nozzle [_ComponentInformation_]
+### Nozzle[_ComponentInformation_]
 
-### Mixer [_ComponentInformation_]
+
+### Mixer[_ComponentInformation_]
 
 
 
