@@ -50,22 +50,6 @@ This is another object that represents the author of the dataset. Please note, t
   - Description: output of the experimental setup, propably containing the desired product, propably not.
 
 
-### ComponentInformation
-
-- __manufacturer__
-  - Type: string
-  - Description: name of the manufacturer of the device.
-- __type_number__
-  - Type: string
-  - Description: exact type number given by the manufacturer of the device.
-- __series__
-  - Type: string
-  - Description: the series of the device.
-- __operational_mode__
-  - Type: string
-  - Description: operational mode of the flow module.
-
-
 ### Device
 
 - __measuring_instruments__
@@ -102,6 +86,21 @@ This is another object that represents the author of the dataset. Please note, t
   - Multiple: True
 
 
+### ComponentInformation
+
+- __manufacturer__
+  - Type: string
+  - Description: name of the manufacturer of the device.
+- __type_number__
+  - Type: string
+  - Description: exact type number given by the manufacturer of the device.
+- __series__
+  - Type: string
+  - Description: the series of the device.
+- __operational_mode__
+  - Type: string
+  - Description: operational mode of the flow module.
+
 ### Thermocouple[_ComponentInformation_]
 
 - __thermocouple_type__
@@ -123,14 +122,14 @@ This is another object that represents the author of the dataset. Please note, t
   - Description: placeholder
 
 
-### Reactor
+### Reactor[_ComponentInformation_]
 
 - __reactor_type__
   - Type: string
   - Description: reactor type.
 
 
-### Tubing
+### Tubing[_ComponentInformation_]
 
 - __material__
   - Type: string
@@ -191,111 +190,6 @@ This is another object that represents the author of the dataset. Please note, t
   - Description: power of the cooling mantle in W.
 
 
-### Chemical
-
-- __name__
-  - Type: string
-  - Description: IUPAC name of the compound.
-  - Multiple: True
-- __formula__
-  - Type: string
-  - Description: molecular formula of the compound.
-- __pureness__
-  - Type: float
-  - Description: pureness of the compound in percent.
-- __supplier__
-  - Type: string
-  - Description: name of the supplier of the compound.
-- __stoichiometry__
-  - Type: Stoichiometry
-  - Description: stoichiometric information like equivalents, mass, amount of substance, volume
-- __state_of_matter__
-  - Type: string
-  - Description: s for solid, l for liquid and g for gaseous
-
-
-### Stoichiometry
-
-Stoichiometric information about the compound.
-
-- __equivalents__
-  - Type: float
-  - Description: used equivalents in relation to the reference compound
-- __amount_of_substance__
-  - Type: float
-  - Description: amount of substance n in mmol
-- __mass__
-  - Type: float
-  - Description: used mass of the compound in g
-- __volume__
-  - Type: float
-  - Description: volume of the compound
-- __density__
-  - Type: float
-  - Description: density of the compound at standard temperature and pressure.
-- __molar_mass__
-  - Type: float
-  - Description: molar mass of the compound in g per mol
-- __mass_concentration__
-  - Type: float
-  - Description: mass concentration in percent.
-- __molar_concentration__
-  - Type: float
-  - Description: molar concentration in mol per l.
-
-
-### OperatingMedium
-
-- __educts__
-  - Type: Educt
-  - Description: educt of the reaction investigated.
-  - Multiple: True
-- __inert_gas__
-  - Type: InertGas
-  - Description: inert gas with which the reaction apparatus is flushed.
-
-
-### Educt
-
-- __reagents__
-  - Type: Reagent
-  - Description: Reagent that is used in the reaction under study.
-  - Multiple: True
-- __solvents__
-  - Type: Solvent
-  - Description: solvent in which the educts are solved.
-  - Multiple: True
-
-
-### Reagent[_Chemical_]
-
-- __placeholder__
-  - Type: integer
-  - Description: placeholder
-
-
-### Solvent[_Chemical_]
-
-- __placeholder__
-  - Type: integer
-  - Description: placeholder
-
-
-### InertGas[_Chemical_]
-
-- __placeholder__
-  - Type: integer
-  - Description: placeholder
-
-
-### OutputComposition
-
-- __Components__
-  - Type: Chemical
-  - Description: component of the output fluid.
-  - Multiple: True
-
-
 ### FlowModule
 
 - __vessels__
@@ -323,7 +217,7 @@ Stoichiometric information about the compound.
   - Description: nozzle.
   - Multiple: True
 - __mixers__
-  - Type: integer
+  - Type: Mixer
   - Description: component that ensures good mixing of fluids.
   - Multiple: True
 
@@ -466,5 +360,117 @@ Stoichiometric information about the compound.
 - __placeholder__
   - Type: integer
   - Description: placeholder
+
+
+### Mixer[_ComponentInformation_]
+
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
+
+### Chemical
+
+- __name__
+  - Type: string
+  - Description: IUPAC name of the compound.
+  - Multiple: True
+- __formula__
+  - Type: string
+  - Description: molecular formula of the compound.
+- __pureness__
+  - Type: float
+  - Description: pureness of the compound in percent.
+- __supplier__
+  - Type: string
+  - Description: name of the supplier of the compound.
+- __stoichiometry__
+  - Type: Stoichiometry
+  - Description: stoichiometric information like equivalents, mass, amount of substance, volume
+- __state_of_matter__
+  - Type: string
+  - Description: s for solid, l for liquid and g for gaseous
+
+
+### Stoichiometry
+
+Stoichiometric information about the compound.
+
+- __equivalents__
+  - Type: float
+  - Description: used equivalents in relation to the reference compound
+- __amount_of_substance__
+  - Type: float
+  - Description: amount of substance n in mmol
+- __mass__
+  - Type: float
+  - Description: used mass of the compound in g
+- __volume__
+  - Type: float
+  - Description: volume of the compound
+- __density__
+  - Type: float
+  - Description: density of the compound at standard temperature and pressure.
+- __molar_mass__
+  - Type: float
+  - Description: molar mass of the compound in g per mol
+- __mass_concentration__
+  - Type: float
+  - Description: mass concentration in percent.
+- __molar_concentration__
+  - Type: float
+  - Description: molar concentration in mol per l.
+
+
+### OperatingMedium
+
+- __educts__
+  - Type: Educt
+  - Description: educt of the reaction investigated.
+  - Multiple: True
+- __inert_gas__
+  - Type: InertGas
+  - Description: inert gas with which the reaction apparatus is flushed.
+
+
+### Educt
+
+- __reagents__
+  - Type: Reagent
+  - Description: Reagent that is used in the reaction under study.
+  - Multiple: True
+- __solvents__
+  - Type: Solvent
+  - Description: solvent in which the educts are solved.
+  - Multiple: True
+
+
+### Reagent[_Chemical_]
+
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
+
+### Solvent[_Chemical_]
+
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
+
+### InertGas[_Chemical_]
+
+- __placeholder__
+  - Type: integer
+  - Description: placeholder
+
+
+### OutputComposition
+
+- __Components__
+  - Type: Chemical
+  - Description: component of the output fluid.
+  - Multiple: True
 
 
