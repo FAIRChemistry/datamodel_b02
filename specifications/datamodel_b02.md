@@ -252,7 +252,7 @@ Stoichiometric information about the compound.
   - Description: Reagent that is used in the reaction under study.
   - Multiple: True
 - __solvents__
-  - Type Solvent
+  - Type: Solvent
   - Description: solvent in which the educts are solved.
   - Multiple: True
 
@@ -278,7 +278,7 @@ Stoichiometric information about the compound.
 
 - __vessels__
   - Type: Vessel
-  - Description: vessels in which reactants are stored.
+  - Description: vessels in which the reactants are stored.
   - Multiple: True
 - __pressure_regulators__
   - Type: PressureRegulator
