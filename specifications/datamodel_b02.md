@@ -472,5 +472,3 @@ Stoichiometric information about the compound.
   - Type: Chemical
   - Description: component of the output fluid.
   - Multiple: True
-
-
