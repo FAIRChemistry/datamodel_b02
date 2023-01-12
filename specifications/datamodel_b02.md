@@ -1,5 +1,6 @@
 # Data model for CRC 1333 project B02
 
+This is the perliminary data model for CRC 1333 project B02. At the current time, the data model is still under development and major changes can occur at any time. Please feel free to make changes and contribute to the project.
 
 ### Dataset
 
@@ -64,10 +65,11 @@ This is another object that represents the author of the dataset. Please note, t
   - Type: string
   - Description: operational mode of the flow module.
 
+
 ### Device
 
 - __measuring_instruments__
-  - Type: MeasurungInstrument
+  - Type: MeasuringInstrument
   - Description: instrument that measures a physical quantity.
 - __reactors__
   - Type: Reactor
