@@ -111,14 +111,14 @@ This is another object that represents the author of the dataset. Please note, t
 ### PressureGauge[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
 ### Analyzer[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
@@ -245,23 +245,23 @@ This is another object that represents the author of the dataset. Please note, t
 ### PressureReducingRegulator[_ComponentInformation_]
 
 - __stages__
-  - Type: integer
+  - Type: int
   - Description: number of stages the pressure reducing valve has, usually 1 or 2. 
 - __max_primary_pressure__
-  - Type: integer
+  - Type: int
   - Description: maximum permissible primary pressure with which this device may be operated in mbar.
 - __max_secundary_pressure__
-  - Type: integer
+  - Type: int
   - Description: maximum possible secondary pressure that can be tapped at this device in mbar.
 
 
 ### BackPressureRegulator[_ComponentInformation_]
 
 - __max_primary_pressure__
-  - Type: integer
+  - Type: int
   - Description: maximum possible primary pressure that can be maintained by this device in mbar.
 - __min_primary_pressure__
-  - Type: integer
+  - Type: int
   - Description: minimum possible primary pressure that can be maintained by this device in mbar.
 
 
@@ -287,35 +287,35 @@ This is another object that represents the author of the dataset. Please note, t
 ### BallValve[_ComponentInformation_]
 
 - __number_of_ports__
-  - Type: integer
+  - Type: int
   - Description: number of ports.
 
 
 ### PlugValve[_ComponentInformation_]
 
 - __number_of_ports__
-  - Type: integer
+  - Type: int
   - Description: number of ports.
 
 
 ### NeedleValve[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
 ### CheckValve[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
 ### ReliefValve[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
@@ -334,14 +334,14 @@ This is another object that represents the author of the dataset. Please note, t
 ### ReciprocatingPump[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
 ### SyringePump[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
@@ -358,14 +358,14 @@ This is another object that represents the author of the dataset. Please note, t
 ### Nozzle[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
 ### Mixer[_ComponentInformation_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
@@ -448,27 +448,27 @@ Stoichiometric information about the compound.
 ### Reagent[_Chemical_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
 ### Solvent[_Chemical_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
 ### InertGas[_Chemical_]
 
 - __placeholder__
-  - Type: integer
+  - Type: int
   - Description: placeholder
 
 
 ### OutputComposition
 
-- __Components__
+- __components__
   - Type: Chemical
   - Description: component of the output fluid.
   - Multiple: True
