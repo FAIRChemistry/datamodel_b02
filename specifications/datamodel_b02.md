@@ -323,7 +323,7 @@ Stoichiometric information about the compound.
   - Description: nozzle.
   - Multiple: True
 - __mixers__
-  - Type: Mixer
+  - Type: integer
   - Description: component that ensures good mixing of fluids.
   - Multiple: True
 
@@ -462,13 +462,6 @@ Stoichiometric information about the compound.
 
 
 ### Nozzle[_ComponentInformation_]
-
-- __placeholder__
-  - Type: integer
-  - Description: placeholder
-
-
-### Mixer[_ComponentInformation_]
 
 - __placeholder__
   - Type: integer
