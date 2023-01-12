@@ -19,7 +19,7 @@ class OutputComposition(sdRDM.DataModel):
         xml="@id",
     )
 
-    Components: List[Chemical] = Field(
+    components: List[Chemical] = Field(
         description="component of the output fluid.", default_factory=ListPlus
     )
 
@@ -28,10 +28,10 @@ class OutputComposition(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="4c9b99d8f8bfef1da92cd9da2ca6cc7487cee9fe"
+        default="1f46c6e9b1ff52ff4820a24a83eccf60d379514b"
     )
 
-    def add_to_Components(
+    def add_to_components(
         self,
         name: List[str],
         formula: Optional[str] = None,
@@ -42,7 +42,7 @@ class OutputComposition(sdRDM.DataModel):
         id: Optional[str] = None,
     ) -> None:
         """
-        Adds an instance of 'Chemical' to the attribute 'Components'.
+        Adds an instance of 'Chemical' to the attribute 'components'.
 
         Args:
 
@@ -78,5 +78,5 @@ class OutputComposition(sdRDM.DataModel):
         }
         if id is not None:
             params["id"] = id
-        Components = [Chemical(**params)]
-        self.Components = self.Components + Components
+        components = [Chemical(**params)]
+        self.components = self.components + components

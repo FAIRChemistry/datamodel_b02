@@ -503,7 +503,7 @@
   },
   "OutputComposition": {
     "attributes": {
-      "Components": {
+      "components": {
         "description": "component of the output fluid.",
         "multiple": "True"
       }

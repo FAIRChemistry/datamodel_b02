@@ -107,11 +107,11 @@ classDiagram
     }
     
     class PressureGauge {
-        +integer placeholder
+        +int placeholder
     }
     
     class Analyzer {
-        +integer placeholder
+        +int placeholder
     }
     
     class Reactor {
@@ -166,14 +166,14 @@ classDiagram
     }
     
     class PressureReducingRegulator {
-        +integer stages
-        +integer max_primary_pressure
-        +integer max_secundary_pressure
+        +int stages
+        +int max_primary_pressure
+        +int max_secundary_pressure
     }
     
     class BackPressureRegulator {
-        +integer max_primary_pressure
-        +integer min_primary_pressure
+        +int max_primary_pressure
+        +int min_primary_pressure
     }
     
     class Valve {
@@ -185,23 +185,23 @@ classDiagram
     }
     
     class BallValve {
-        +integer number_of_ports
+        +int number_of_ports
     }
     
     class PlugValve {
-        +integer number_of_ports
+        +int number_of_ports
     }
     
     class NeedleValve {
-        +integer placeholder
+        +int placeholder
     }
     
     class CheckValve {
-        +integer placeholder
+        +int placeholder
     }
     
     class ReliefValve {
-        +integer placeholder
+        +int placeholder
     }
     
     class Pump {
@@ -210,11 +210,11 @@ classDiagram
     }
     
     class ReciprocatingPump {
-        +integer placeholder
+        +int placeholder
     }
     
     class SyringePump {
-        +integer placeholder
+        +int placeholder
     }
     
     class MassFlowController {
@@ -223,11 +223,11 @@ classDiagram
     }
     
     class Nozzle {
-        +integer placeholder
+        +int placeholder
     }
     
     class Mixer {
-        +integer placeholder
+        +int placeholder
     }
     
     class Chemical {
@@ -261,19 +261,19 @@ classDiagram
     }
     
     class Reagent {
-        +integer placeholder
+        +int placeholder
     }
     
     class Solvent {
-        +integer placeholder
+        +int placeholder
     }
     
     class InertGas {
-        +integer placeholder
+        +int placeholder
     }
     
     class OutputComposition {
-        +Chemical[0..*] Components
+        +Chemical[0..*] components
     }
     
 ```
