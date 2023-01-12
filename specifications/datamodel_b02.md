@@ -157,8 +157,8 @@ This is another object that represents the author of the dataset. Please note, t
   - Type: string
   - Description: material of which the insulation is made of.
 - __thickness__
-   - Type: float
-   - Description: thickness of the insulation in mm.
+  - Type: float
+  - Description: thickness of the insulation in mm.
 
 
 ### HeatingMantle
