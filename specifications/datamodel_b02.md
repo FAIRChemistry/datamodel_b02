@@ -5,7 +5,7 @@
 
 - __title*__
   - Type: string
-  - Description: title of the work
+  - Description: title of the work.
 - __description*__
   - Type: string
   - Description: describes the content of the dataset.
@@ -41,15 +41,15 @@ This is another object that represents the author of the dataset. Please note, t
   - Description: tubing connection between two devices of a reactor setup.
   - Multiple: True
 - __operating_media__
-  - Type: OperatingMedia
-  - Description: chemical that is used for the experiment.
+  - Type: OperatingMedium
+  - Description: chemical used for the experiment.
   - Multiple: True
-- __outputs__
+- __output__
   - Type: Output
   - Description: output of the experimental setup, propably containing the desired product, propably not.
 
 
-### Component
+### ComponentInformation
 
 - __manufacturer__
   - Type: string
@@ -59,10 +59,10 @@ This is another object that represents the author of the dataset. Please note, t
   - Description: exact type number given by the manufacturer of the device.
 - __series__
   - Type: string
-  - Description: the Series of the device.
-- __operation_mode__
+  - Description: the series of the device.
+- __operational_mode__
   - Type: string
-  - Description: operation mode of the Flow module.
+  - Description: operational mode of the flow module.
 
 ### Device
 
@@ -100,17 +100,17 @@ This is another object that represents the author of the dataset. Please note, t
   - Multiple: True
 
 
-### Thermocouple [_Component_]
+### Thermocouple [_ComponentInformation_]
 
 - __thermocouple_type__
   - Type: string
   - Description: type of the Thermocouple (E, J, K, M, N, T, B, R, S, C, D, G or others)
 
 
-### PressureGauge [_Component_]
+### PressureGauge [_ComponentInformation_]
 
 
-### Analyzer [_Component_]
+### Analyzer [_ComponentInformation_]
 
 
 ### Reactor
@@ -261,7 +261,7 @@ Stoichiometric information about the compound.
   - Multiple: True
 
 
-### Vessel [_Component_]
+### Vessel [_ComponentInformation_]
 
 - __volume__
   - Type: float
@@ -281,7 +281,7 @@ Stoichiometric information about the compound.
   - Description: pressure control device that maintains a defined pressure upstream of its own inlet. Installed downstream.
 
 
-### PressureReducingRegulator [_Component_]
+### PressureReducingRegulator [_ComponentInformation_]
 
 - __stages__
   - Type: integer
@@ -294,7 +294,7 @@ Stoichiometric information about the compound.
   - Description: maximum possible secondary pressure that can be tapped at this device in mbar.
 
 
-### BackPressureRegulator [_Component_]
+### BackPressureRegulator [_ComponentInformation_]
 
 - __max_primary_pressure__
   - Type: integer
@@ -323,30 +323,30 @@ Stoichiometric information about the compound.
   - Description: flow control device for safety used to control or limit the pressure in a system and allowing the pressurized fluid to flow from an auxiliary passage out of the system.
 
 
-### BallValve [_Component_]
+### BallValve [_ComponentInformation_]
 
 - __number_of_ports__
   - Type: integer
   - Description: number of ports
 
 
-### PlugVavle [_Component_]
+### PlugVavle [_ComponentInformation_]
 
 - __number_of_ports__
   - Type: integer
   - Description: number of ports
 
 
-### NeedleValve [_Component_]
+### NeedleValve [_ComponentInformation_]
 
 
-### CheckValve [_Component_]
+### CheckValve [_ComponentInformation_]
 
 
-### ReliefValve [_Component_]
+### ReliefValve [_ComponentInformation_]
 
 
-### Pump [_Component_]
+### Pump [_ComponentInformation_]
 
 - __reciprocating_pumps__
   - Type: ReciprocatingPump
@@ -356,13 +356,13 @@ Stoichiometric information about the compound.
   - Description:
 
 
-### ReciprocatingPump [_Component_]
+### ReciprocatingPump [_ComponentInformation_]
 
 
-### SyringePump [_Component_]
+### SyringePump [_ComponentInformation_]
 
 
-### MFC [_Component_]
+### MFC [_ComponentInformation_]
 
 - __minimum_mass_flow__
   - Type: float
@@ -372,7 +372,7 @@ Stoichiometric information about the compound.
   - Description: maximum volume flow in SCCM.
 
 
-### Nozzle [_Component_]
+### Nozzle [_ComponentInformation_]
 
 
 
