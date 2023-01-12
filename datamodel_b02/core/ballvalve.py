@@ -22,5 +22,5 @@ class BallValve(ComponentInformation):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="1e3c1dd9ffd79c2ed7f59e418212f341e9c2f977"
+        default="adf936baacb5f1daed30a445b2e8875ca8cc0a6a"
     )
