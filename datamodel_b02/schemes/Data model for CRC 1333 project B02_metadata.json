@@ -51,23 +51,6 @@
     },
     "docstring": null
   },
-  "ComponentInformation": {
-    "attributes": {
-      "manufacturer": {
-        "description": "name of the manufacturer of the device."
-      },
-      "type_number": {
-        "description": "exact type number given by the manufacturer of the device."
-      },
-      "series": {
-        "description": "the series of the device."
-      },
-      "operational_mode": {
-        "description": "operational mode of the flow module."
-      }
-    },
-    "docstring": null
-  },
   "Device": {
     "attributes": {
       "measuring_instruments": {
@@ -102,6 +85,23 @@
       "pressure_gauge": {
         "description": "pressure gauge to measure the pressure at a specific position in the reaction plant.",
         "multiple": "True"
+      }
+    },
+    "docstring": null
+  },
+  "ComponentInformation": {
+    "attributes": {
+      "manufacturer": {
+        "description": "name of the manufacturer of the device."
+      },
+      "type_number": {
+        "description": "exact type number given by the manufacturer of the device."
+      },
+      "series": {
+        "description": "the series of the device."
+      },
+      "operational_mode": {
+        "description": "operational mode of the flow module."
       }
     },
     "docstring": null
@@ -199,117 +199,6 @@
       },
       "power": {
         "description": "power of the cooling mantle in W."
-      }
-    },
-    "docstring": null
-  },
-  "Chemical": {
-    "attributes": {
-      "name": {
-        "description": "IUPAC name of the compound.",
-        "multiple": "True"
-      },
-      "formula": {
-        "description": "molecular formula of the compound."
-      },
-      "pureness": {
-        "description": "pureness of the compound in percent."
-      },
-      "supplier": {
-        "description": "name of the supplier of the compound."
-      },
-      "stoichiometry": {
-        "description": "stoichiometric information like equivalents, mass, amount of substance, volume"
-      },
-      "state_of_matter": {
-        "description": "s for solid, l for liquid and g for gaseous"
-      }
-    },
-    "docstring": null
-  },
-  "Stoichiometry": {
-    "attributes": {
-      "equivalents": {
-        "description": "used equivalents in relation to the reference compound"
-      },
-      "amount_of_substance": {
-        "description": "amount of substance n in mmol"
-      },
-      "mass": {
-        "description": "used mass of the compound in g"
-      },
-      "volume": {
-        "description": "volume of the compound"
-      },
-      "density": {
-        "description": "density of the compound at standard temperature and pressure."
-      },
-      "molar_mass": {
-        "description": "molar mass of the compound in g per mol"
-      },
-      "mass_concentration": {
-        "description": "mass concentration in percent."
-      },
-      "molar_concentration": {
-        "description": "molar concentration in mol per l."
-      }
-    },
-    "docstring": "Stoichiometric information about the compound.\n"
-  },
-  "OperatingMedium": {
-    "attributes": {
-      "educts": {
-        "description": "educt of the reaction investigated.",
-        "multiple": "True"
-      },
-      "inert_gas": {
-        "description": "inert gas with which the reaction apparatus is flushed."
-      }
-    },
-    "docstring": null
-  },
-  "Educt": {
-    "attributes": {
-      "reagents": {
-        "description": "Reagent that is used in the reaction under study.",
-        "multiple": "True"
-      },
-      "solvents": {
-        "description": "solvent in which the educts are solved.",
-        "multiple": "True"
-      }
-    },
-    "docstring": null
-  },
-  "Reagent": {
-    "attributes": {
-      "placeholder": {
-        "description": "placeholder"
-      }
-    },
-    "docstring": null
-  },
-  "Solvent": {
-    "attributes": {
-      "placeholder": {
-        "description": "placeholder"
-      }
-    },
-    "docstring": null
-  },
-  "InertGas": {
-    "attributes": {
-      "placeholder": {
-        "description": "placeholder"
-      }
-    },
-    "docstring": null
-  },
-  "OutputComposition": {
-    "attributes": {
-      "Components": {
-        "description": "component of the output fluid.",
-        "multiple": "True"
       }
     },
     "docstring": null
@@ -498,6 +387,125 @@
     "attributes": {
       "placeholder": {
         "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "Mixer": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "Chemical": {
+    "attributes": {
+      "name": {
+        "description": "IUPAC name of the compound.",
+        "multiple": "True"
+      },
+      "formula": {
+        "description": "molecular formula of the compound."
+      },
+      "pureness": {
+        "description": "pureness of the compound in percent."
+      },
+      "supplier": {
+        "description": "name of the supplier of the compound."
+      },
+      "stoichiometry": {
+        "description": "stoichiometric information like equivalents, mass, amount of substance, volume"
+      },
+      "state_of_matter": {
+        "description": "s for solid, l for liquid and g for gaseous"
+      }
+    },
+    "docstring": null
+  },
+  "Stoichiometry": {
+    "attributes": {
+      "equivalents": {
+        "description": "used equivalents in relation to the reference compound"
+      },
+      "amount_of_substance": {
+        "description": "amount of substance n in mmol"
+      },
+      "mass": {
+        "description": "used mass of the compound in g"
+      },
+      "volume": {
+        "description": "volume of the compound"
+      },
+      "density": {
+        "description": "density of the compound at standard temperature and pressure."
+      },
+      "molar_mass": {
+        "description": "molar mass of the compound in g per mol"
+      },
+      "mass_concentration": {
+        "description": "mass concentration in percent."
+      },
+      "molar_concentration": {
+        "description": "molar concentration in mol per l."
+      }
+    },
+    "docstring": "Stoichiometric information about the compound.\n"
+  },
+  "OperatingMedium": {
+    "attributes": {
+      "educts": {
+        "description": "educt of the reaction investigated.",
+        "multiple": "True"
+      },
+      "inert_gas": {
+        "description": "inert gas with which the reaction apparatus is flushed."
+      }
+    },
+    "docstring": null
+  },
+  "Educt": {
+    "attributes": {
+      "reagents": {
+        "description": "Reagent that is used in the reaction under study.",
+        "multiple": "True"
+      },
+      "solvents": {
+        "description": "solvent in which the educts are solved.",
+        "multiple": "True"
+      }
+    },
+    "docstring": null
+  },
+  "Reagent": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "Solvent": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "InertGas": {
+    "attributes": {
+      "placeholder": {
+        "description": "placeholder"
+      }
+    },
+    "docstring": null
+  },
+  "OutputComposition": {
+    "attributes": {
+      "Components": {
+        "description": "component of the output fluid.",
+        "multiple": "True"
       }
     },
     "docstring": null

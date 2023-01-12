@@ -55,7 +55,7 @@ class ProcessScheme(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="adf936baacb5f1daed30a445b2e8875ca8cc0a6a"
+        default="77e70dd05752c75381f94d10c2488f1e8d2ddd01"
     )
 
     def add_to_devices(
@@ -95,6 +95,10 @@ class ProcessScheme(sdRDM.DataModel):
 
     def add_to_tubings(
         self,
+        manufacturer: Optional[str] = None,
+        type_number: Optional[str] = None,
+        series: Optional[str] = None,
+        operational_mode: Optional[str] = None,
         material: Optional[str] = None,
         inner_diameter: Optional[float] = None,
         wall_thickness: Optional[float] = None,
@@ -113,6 +117,18 @@ class ProcessScheme(sdRDM.DataModel):
 
 
             id (str): Unique identifier of the 'Tubing' object. Defaults to 'None'.
+
+
+            manufacturer (Optional[str]): name of the manufacturer of the device. Defaults to None
+
+
+            type_number (Optional[str]): exact type number given by the manufacturer of the device. Defaults to None
+
+
+            series (Optional[str]): the series of the device. Defaults to None
+
+
+            operational_mode (Optional[str]): operational mode of the flow module. Defaults to None
 
 
             material (Optional[str]): material of the Capillary connection, e.g. 1.4404, silicone, etc. Defaults to None
@@ -143,6 +159,10 @@ class ProcessScheme(sdRDM.DataModel):
         """
 
         params = {
+            "manufacturer": manufacturer,
+            "type_number": type_number,
+            "series": series,
+            "operational_mode": operational_mode,
             "material": material,
             "inner_diameter": inner_diameter,
             "wall_thickness": wall_thickness,

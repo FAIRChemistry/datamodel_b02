@@ -34,7 +34,7 @@ class Educt(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="adf936baacb5f1daed30a445b2e8875ca8cc0a6a"
+        default="77e70dd05752c75381f94d10c2488f1e8d2ddd01"
     )
 
     def add_to_reagents(

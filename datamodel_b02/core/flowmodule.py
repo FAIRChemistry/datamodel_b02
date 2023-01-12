@@ -22,6 +22,7 @@ from .reliefvalve import ReliefValve
 from .syringepump import SyringePump
 from .valve import Valve
 from .vessel import Vessel
+from .mixer import Mixer
 
 
 @forge_signature
@@ -64,7 +65,7 @@ class FlowModule(sdRDM.DataModel):
 
     nozzles: List[Nozzle] = Field(description="nozzle.", default_factory=ListPlus)
 
-    mixers: List[int] = Field(
+    mixers: List[Mixer] = Field(
         description="component that ensures good mixing of fluids.",
         default_factory=ListPlus,
     )
@@ -74,7 +75,7 @@ class FlowModule(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="adf936baacb5f1daed30a445b2e8875ca8cc0a6a"
+        default="77e70dd05752c75381f94d10c2488f1e8d2ddd01"
     )
 
     def add_to_vessels(
@@ -346,3 +347,48 @@ class FlowModule(sdRDM.DataModel):
             params["id"] = id
         nozzles = [Nozzle(**params)]
         self.nozzles = self.nozzles + nozzles
+
+    def add_to_mixers(
+        self,
+        manufacturer: Optional[str] = None,
+        type_number: Optional[str] = None,
+        series: Optional[str] = None,
+        operational_mode: Optional[str] = None,
+        placeholder: Optional[int] = None,
+        id: Optional[str] = None,
+    ) -> None:
+        """
+        Adds an instance of 'Mixer' to the attribute 'mixers'.
+
+        Args:
+
+
+            id (str): Unique identifier of the 'Mixer' object. Defaults to 'None'.
+
+
+            manufacturer (Optional[str]): name of the manufacturer of the device. Defaults to None
+
+
+            type_number (Optional[str]): exact type number given by the manufacturer of the device. Defaults to None
+
+
+            series (Optional[str]): the series of the device. Defaults to None
+
+
+            operational_mode (Optional[str]): operational mode of the flow module. Defaults to None
+
+
+            placeholder (Optional[int]): placeholder. Defaults to None
+        """
+
+        params = {
+            "manufacturer": manufacturer,
+            "type_number": type_number,
+            "series": series,
+            "operational_mode": operational_mode,
+            "placeholder": placeholder,
+        }
+        if id is not None:
+            params["id"] = id
+        mixers = [Mixer(**params)]
+        self.mixers = self.mixers + mixers

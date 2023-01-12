@@ -3,9 +3,8 @@ classDiagram
     ComponentInformation <-- Thermocouple
     ComponentInformation <-- PressureGauge
     ComponentInformation <-- Analyzer
-    Chemical <-- Reagent
-    Chemical <-- Solvent
-    Chemical <-- InertGas
+    ComponentInformation <-- Reactor
+    ComponentInformation <-- Tubing
     ComponentInformation <-- Vessel
     ComponentInformation <-- PressureReducingRegulator
     ComponentInformation <-- BackPressureRegulator
@@ -19,6 +18,10 @@ classDiagram
     ComponentInformation <-- SyringePump
     ComponentInformation <-- MassFlowController
     ComponentInformation <-- Nozzle
+    ComponentInformation <-- Mixer
+    Chemical <-- Reagent
+    Chemical <-- Solvent
+    Chemical <-- InertGas
     Dataset *-- Author
     Dataset *-- ProcessScheme
     ProcessScheme *-- Device
@@ -35,18 +38,13 @@ classDiagram
     Tubing *-- Insulation
     Tubing *-- HeatingMantle
     Tubing *-- CoolingMantle
-    Chemical *-- Stoichiometry
-    OperatingMedium *-- Educt
-    OperatingMedium *-- InertGas
-    Educt *-- Reagent
-    Educt *-- Solvent
-    OutputComposition *-- Chemical
     FlowModule *-- Vessel
     FlowModule *-- PressureRegulator
     FlowModule *-- Valve
     FlowModule *-- Pump
     FlowModule *-- MassFlowController
     FlowModule *-- Nozzle
+    FlowModule *-- Mixer
     PressureRegulator *-- PressureReducingRegulator
     PressureRegulator *-- BackPressureRegulator
     Valve *-- BallValve
@@ -56,6 +54,11 @@ classDiagram
     Valve *-- ReliefValve
     Pump *-- ReciprocatingPump
     Pump *-- SyringePump
+    Chemical *-- Stoichiometry
+    OperatingMedium *-- Educt
+    OperatingMedium *-- InertGas
+    Educt *-- Reagent
+    Educt *-- Solvent
     
     class Dataset {
         +string title*
@@ -76,13 +79,6 @@ classDiagram
         +OutputComposition output
     }
     
-    class ComponentInformation {
-        +string manufacturer
-        +string type_number
-        +string series
-        +string operational_mode
-    }
-    
     class Device {
         +MeasuringInstrument measuring_instruments
         +Reactor reactors
@@ -97,6 +93,13 @@ classDiagram
     class ProcessController {
         +Thermocouple[0..*] thermocouples
         +PressureGauge[0..*] pressure_gauge
+    }
+    
+    class ComponentInformation {
+        +string manufacturer
+        +string type_number
+        +string series
+        +string operational_mode
     }
     
     class Thermocouple {
@@ -142,52 +145,6 @@ classDiagram
         +float power
     }
     
-    class Chemical {
-        +string[0..*] name
-        +string formula
-        +float pureness
-        +string supplier
-        +Stoichiometry stoichiometry
-        +string state_of_matter
-    }
-    
-    class Stoichiometry {
-        +float equivalents
-        +float amount_of_substance
-        +float mass
-        +float volume
-        +float density
-        +float molar_mass
-        +float mass_concentration
-        +float molar_concentration
-    }
-    
-    class OperatingMedium {
-        +Educt[0..*] educts
-        +InertGas inert_gas
-    }
-    
-    class Educt {
-        +Reagent[0..*] reagents
-        +Solvent[0..*] solvents
-    }
-    
-    class Reagent {
-        +integer placeholder
-    }
-    
-    class Solvent {
-        +integer placeholder
-    }
-    
-    class InertGas {
-        +integer placeholder
-    }
-    
-    class OutputComposition {
-        +Chemical[0..*] Components
-    }
-    
     class FlowModule {
         +Vessel[0..*] vessels
         +PressureRegulator[0..*] pressure_regulators
@@ -195,7 +152,7 @@ classDiagram
         +Pump[0..*] pumps
         +MassFlowController[0..*] mass_flow_controllers
         +Nozzle[0..*] nozzles
-        +integer[0..*] mixers
+        +Mixer[0..*] mixers
     }
     
     class Vessel {
@@ -267,6 +224,56 @@ classDiagram
     
     class Nozzle {
         +integer placeholder
+    }
+    
+    class Mixer {
+        +integer placeholder
+    }
+    
+    class Chemical {
+        +string[0..*] name
+        +string formula
+        +float pureness
+        +string supplier
+        +Stoichiometry stoichiometry
+        +string state_of_matter
+    }
+    
+    class Stoichiometry {
+        +float equivalents
+        +float amount_of_substance
+        +float mass
+        +float volume
+        +float density
+        +float molar_mass
+        +float mass_concentration
+        +float molar_concentration
+    }
+    
+    class OperatingMedium {
+        +Educt[0..*] educts
+        +InertGas inert_gas
+    }
+    
+    class Educt {
+        +Reagent[0..*] reagents
+        +Solvent[0..*] solvents
+    }
+    
+    class Reagent {
+        +integer placeholder
+    }
+    
+    class Solvent {
+        +integer placeholder
+    }
+    
+    class InertGas {
+        +integer placeholder
+    }
+    
+    class OutputComposition {
+        +Chemical[0..*] Components
     }
     
 ```
