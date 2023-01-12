@@ -84,7 +84,7 @@ This is another object that represents the author of the dataset. Please note, t
   - Description: devices that measure physical parameters to control and observe the process.
 - __analyzers__
   - Type: Analyzer
-  - Description: analyzation module to investigate the composition of the reactor output
+  - Description: analyzation module to investigate the composition of the reactor output.
 
 
 ### ProcessController
@@ -104,7 +104,7 @@ This is another object that represents the author of the dataset. Please note, t
 
 - __thermocouple_type__
   - Type: string
-  - Description: type of the Thermocouple (E, J, K, M, N, T, B, R, S, C, D, G or others)
+  - Description: type of the thermocouple (E, J, K, M, N, T, B, R, S, C, D, G or others).
 
 
 ### PressureGauge [_ComponentInformation_]
@@ -148,6 +148,35 @@ This is another object that represents the author of the dataset. Please note, t
 - __color__
   - Type: string
   - Description: color of the Capillary connection
+
+
+### Insulation
+
+- __insulation_material__
+  - Type: string
+  - Description: material of which the insulation is made of.
+- __thickness__
+   - Type: float
+   - Description: thickness of the insulation in mm.
+
+
+### HeatingMantle
+
+- __length__
+  - Type: float
+  - Description: length of the heating mantle in mm.
+- __power__
+  - Type: float
+  - Description: power of the heating mantle in W.
+
+
+### CoolingMantle
+- __length__
+  - Type: float
+  - Description: length of the cooling mantle in mm.
+- __power__
+  - Type: float
+  - Description: power of the cooling mantle in W.
 
 
 ### OperatingMedia
@@ -253,7 +282,7 @@ Stoichiometric information about the compound.
   - Multiple: True
 - __nozzles__
   - Type: Nozzle
-  - Description: Nozzle
+  - Description: nozzle
   - Multiple: True
 - __mixers__
   - Type: Mixer
@@ -350,10 +379,10 @@ Stoichiometric information about the compound.
 
 - __reciprocating_pumps__
   - Type: ReciprocatingPump
-  - Description: 
+  - Description: reciprocating pump.
 - __syringe_pumps__
   - Type: SyringePump
-  - Description:
+  - Description: syringe pump.
 
 
 ### ReciprocatingPump [_ComponentInformation_]
@@ -373,6 +402,8 @@ Stoichiometric information about the compound.
 
 
 ### Nozzle [_ComponentInformation_]
+
+### Mixer [_ComponentInformation_]
 
 
 
