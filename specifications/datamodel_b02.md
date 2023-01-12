@@ -268,7 +268,7 @@ Stoichiometric information about the compound.
 
 ### OutputComposition
 
-- __Component__
+- __Components__
   - Type: Chemical
   - Description: component of the output fluid.
   - Multiple: True
@@ -298,7 +298,7 @@ Stoichiometric information about the compound.
   - Multiple: True
 - __nozzles__
   - Type: Nozzle
-  - Description: nozzle
+  - Description: nozzle.
   - Multiple: True
 - __mixers__
   - Type: Mixer
@@ -353,10 +353,10 @@ Stoichiometric information about the compound.
 
 - __ball_valve__
   - Type: BallValve
-  - Description: flow control device which uses a hollow, (multi)perforated and pivoting ball to control flow through the valvle.
+  - Description: flow control device which uses a hollow, single or multi perforated and pivoting ball to control flow through the valvle.
 - __plug_valves__
-  - Type: BallValve
-  - Description: flow control device with cylindrical or conically tapered, (multi)perforated and pivoting plug to control flow through the valve.
+  - Type: PlugValve
+  - Description: flow control device with cylindrical or conically tapered, single or multi perforated and pivoting plug to control flow through the valve.
 - __needle_valves__
   - Type: NeedleValve
   - Description: flow control device with a small port and a threaded, needle-shaped plunger to allows precise regulation of flow, although it is generally only capable of relatively low flow rates.
@@ -372,14 +372,14 @@ Stoichiometric information about the compound.
 
 - __number_of_ports__
   - Type: integer
-  - Description: number of ports
+  - Description: number of ports.
 
 
-### PlugVavle[_ComponentInformation_]
+### PlugValve[_ComponentInformation_]
 
 - __number_of_ports__
   - Type: integer
-  - Description: number of ports
+  - Description: number of ports.
 
 
 ### NeedleValve[_ComponentInformation_]
@@ -409,7 +409,7 @@ Stoichiometric information about the compound.
 ### SyringePump[_ComponentInformation_]
 
 
-### MFC[_ComponentInformation_]
+### MassFlowController[_ComponentInformation_]
 
 - __minimum_mass_flow__
   - Type: float
