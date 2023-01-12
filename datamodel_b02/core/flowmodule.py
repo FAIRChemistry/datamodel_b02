@@ -11,7 +11,6 @@ from .backpressureregulator import BackPressureRegulator
 from .ballvalve import BallValve
 from .checkvalve import CheckValve
 from .massflowcontroller import MassFlowController
-from .mixer import Mixer
 from .needlevalve import NeedleValve
 from .nozzle import Nozzle
 from .plugvalve import PlugValve
@@ -65,7 +64,7 @@ class FlowModule(sdRDM.DataModel):
 
     nozzles: List[Nozzle] = Field(description="nozzle.", default_factory=ListPlus)
 
-    mixers: List[Mixer] = Field(
+    mixers: List[int] = Field(
         description="component that ensures good mixing of fluids.",
         default_factory=ListPlus,
     )
@@ -75,7 +74,7 @@ class FlowModule(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="8ad9c293393d92336f63257326745c6bc4db3b6b"
+        default="293993f042f1c1fa4930e9edafb7db27e642d4b0"
     )
 
     def add_to_vessels(
@@ -347,48 +346,3 @@ class FlowModule(sdRDM.DataModel):
             params["id"] = id
         nozzles = [Nozzle(**params)]
         self.nozzles = self.nozzles + nozzles
-
-    def add_to_mixers(
-        self,
-        manufacturer: Optional[str] = None,
-        type_number: Optional[str] = None,
-        series: Optional[str] = None,
-        operational_mode: Optional[str] = None,
-        placeholder: Optional[int] = None,
-        id: Optional[str] = None,
-    ) -> None:
-        """
-        Adds an instance of 'Mixer' to the attribute 'mixers'.
-
-        Args:
-
-
-            id (str): Unique identifier of the 'Mixer' object. Defaults to 'None'.
-
-
-            manufacturer (Optional[str]): name of the manufacturer of the device. Defaults to None
-
-
-            type_number (Optional[str]): exact type number given by the manufacturer of the device. Defaults to None
-
-
-            series (Optional[str]): the series of the device. Defaults to None
-
-
-            operational_mode (Optional[str]): operational mode of the flow module. Defaults to None
-
-
-            placeholder (Optional[int]): placeholder. Defaults to None
-        """
-
-        params = {
-            "manufacturer": manufacturer,
-            "type_number": type_number,
-            "series": series,
-            "operational_mode": operational_mode,
-            "placeholder": placeholder,
-        }
-        if id is not None:
-            params["id"] = id
-        mixers = [Mixer(**params)]
-        self.mixers = self.mixers + mixers

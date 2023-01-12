@@ -15,7 +15,6 @@ from .inertgas import InertGas
 from .insulation import Insulation
 from .massflowcontroller import MassFlowController
 from .measuringinstrument import MeasuringInstrument
-from .mixer import Mixer
 from .needlevalve import NeedleValve
 from .nozzle import Nozzle
 from .operatingmedium import OperatingMedium
@@ -59,7 +58,6 @@ __all__ = [
     "Insulation",
     "MassFlowController",
     "MeasuringInstrument",
-    "Mixer",
     "NeedleValve",
     "Nozzle",
     "OperatingMedium",

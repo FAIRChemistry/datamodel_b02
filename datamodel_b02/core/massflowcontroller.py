@@ -1,11 +1,9 @@
 from typing import Optional, Union
+from typing import Optional
 from pydantic import PrivateAttr
+from pydantic import Field
 from sdRDM.base.listplus import ListPlus
 from sdRDM.base.utils import forge_signature, IDGenerator
-
-from pydantic import Field
-from typing import Optional
-
 from .componentinformation import ComponentInformation
 
 
@@ -16,19 +14,19 @@ class MassFlowController(ComponentInformation):
         default_factory=IDGenerator("massflowcontrollerINDEX"),
         xml="@id",
     )
+
     minimum_mass_flow: Optional[float] = Field(
-        description="minimum volume flow in SCCM.",
-        default=None,
+        description="minimum volume flow in SCCM.", default=None
     )
 
     maximum_mass_flow: Optional[float] = Field(
-        description="maximum volume flow in SCCM.",
-        default=None,
+        description="maximum volume flow in SCCM.", default=None
     )
 
     __repo__: Optional[str] = PrivateAttr(
         default="git://github.com/FAIRChemistry/datamodel_b02.git"
     )
+
     __commit__: Optional[str] = PrivateAttr(
-        default="8ad9c293393d92336f63257326745c6bc4db3b6b"
+        default="293993f042f1c1fa4930e9edafb7db27e642d4b0"
     )
