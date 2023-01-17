@@ -40,7 +40,7 @@ class ProcessController(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="1f46c6e9b1ff52ff4820a24a83eccf60d379514b"
+        default="9c71adb672a8872ef0b47cda2cdc4ecb47fa7c8d"
     )
 
     def add_to_thermocouples(

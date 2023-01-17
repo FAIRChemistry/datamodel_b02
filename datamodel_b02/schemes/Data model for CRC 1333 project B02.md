@@ -74,7 +74,7 @@ classDiagram
     
     class ProcessScheme {
         +Device[0..*] devices
-        +Tubing[0..*] tubings
+        +Tubing[0..*] tubing
         +OperatingMedium[0..*] operating_media
         +OutputComposition output
     }

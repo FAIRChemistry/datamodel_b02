@@ -37,7 +37,7 @@
         "description": "device of a reactor setup.",
         "multiple": "True"
       },
-      "tubings": {
+      "tubing": {
         "description": "tubing connection between two devices of a reactor setup.",
         "multiple": "True"
       },

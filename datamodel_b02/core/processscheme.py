@@ -33,11 +33,6 @@ class ProcessScheme(sdRDM.DataModel):
         description="device of a reactor setup.", default_factory=ListPlus
     )
 
-    tubings: List[Tubing] = Field(
-        description="tubing connection between two devices of a reactor setup.",
-        default_factory=ListPlus,
-    )
-
     operating_media: List[OperatingMedium] = Field(
         description="chemical used for the experiment.", default_factory=ListPlus
     )
@@ -50,12 +45,17 @@ class ProcessScheme(sdRDM.DataModel):
         default=None,
     )
 
+    tubing: List[Tubing] = Field(
+        description="tubing connection between two devices of a reactor setup.",
+        default_factory=ListPlus,
+    )
+
     __repo__: Optional[str] = PrivateAttr(
         default="git://github.com/FAIRChemistry/datamodel_b02.git"
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="1f46c6e9b1ff52ff4820a24a83eccf60d379514b"
+        default="9c71adb672a8872ef0b47cda2cdc4ecb47fa7c8d"
     )
 
     def add_to_devices(
@@ -93,7 +93,7 @@ class ProcessScheme(sdRDM.DataModel):
         devices = [Device(**params)]
         self.devices = self.devices + devices
 
-    def add_to_tubings(
+    def add_to_tubing(
         self,
         manufacturer: Optional[str] = None,
         type_number: Optional[str] = None,
@@ -111,7 +111,7 @@ class ProcessScheme(sdRDM.DataModel):
         id: Optional[str] = None,
     ) -> None:
         """
-        Adds an instance of 'Tubing' to the attribute 'tubings'.
+        Adds an instance of 'Tubing' to the attribute 'tubing'.
 
         Args:
 
@@ -175,8 +175,8 @@ class ProcessScheme(sdRDM.DataModel):
         }
         if id is not None:
             params["id"] = id
-        tubings = [Tubing(**params)]
-        self.tubings = self.tubings + tubings
+        tubing = [Tubing(**params)]
+        self.tubing = self.tubing + tubing
 
     def add_to_operating_media(
         self,
