@@ -37,7 +37,7 @@ This is another object that represents the author of the dataset. Please note, t
   - Type: Device
   - Description: device of a reactor setup.
   - Multiple: True
-- __tubings__
+- __tubing__
   - Type: Tubing
   - Description: tubing connection between two devices of a reactor setup.
   - Multiple: True
