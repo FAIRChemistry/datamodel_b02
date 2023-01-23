@@ -39,5 +39,5 @@ class PressureRegulator(sdRDM.DataModel):
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="41a609850676450d6df0f1c036836a32e74f1eaf"
+        default="c797b854fa0b6a85438601dcbd3056189258ba98"
     )
