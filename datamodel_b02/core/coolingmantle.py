@@ -25,9 +25,9 @@ class CoolingMantle(sdRDM.DataModel):
     )
 
     __repo__: Optional[str] = PrivateAttr(
-        default="git://github.com/FAIRChemistry/datamodel_b02.git"
+        default="git://github.com/FAIRChemistry/datamodel_b02_tc.git"
     )
 
     __commit__: Optional[str] = PrivateAttr(
-        default="9c71adb672a8872ef0b47cda2cdc4ecb47fa7c8d"
+        default="41a609850676450d6df0f1c036836a32e74f1eaf"
     )
